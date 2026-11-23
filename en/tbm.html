@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>TBM Support – European-standard TBM crews | VITUNNEL</title>
+<link rel="alternate" hreflang="vi" href="https://vitunnel.com/tbm.html"><link rel="alternate" hreflang="en" href="https://vitunnel.com/en/tbm.html"><link rel="alternate" hreflang="fr" href="https://vitunnel.com/fr/tbm.html"><link rel="alternate" hreflang="x-default" href="https://vitunnel.com/tbm.html">
+<meta name="description" content="VITUNNEL provides experienced TBM technicians from European tunnel projects for every position on site.">
+<style>
+:root{--blue:#1C3F94;--blue2:#2F6FD0;--light:#5DB6EE;--orange:#E8702F;--ink:#16244A;--muted:#5A6782;--bg:#F4F7FB}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:#fff;line-height:1.55}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+
+/* ---------- sticky top bar ---------- */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:saturate(1.4) blur(8px);
+  border-top:4px solid var(--orange);box-shadow:0 1px 0 #E3E9F2,0 6px 20px -12px rgba(28,63,148,.35)}
+.bar{display:flex;align-items:center;gap:28px;height:70px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand-txt{display:flex;flex-direction:column;line-height:1}
+.brand-txt b{font-size:24px;letter-spacing:.04em;color:var(--blue);font-weight:800}
+.brand-txt small{font-size:9.5px;letter-spacing:.22em;color:var(--orange);font-weight:700;margin-top:4px}
+.nav{display:flex;gap:6px}
+.nav a{text-decoration:none;font-weight:600;font-size:15px;padding:8px 14px;border-radius:8px;color:var(--ink)}
+.nav a:hover,.nav a.on{background:#EAF1FC;color:var(--blue)}
+.contact{margin-left:auto;display:flex;align-items:center;gap:18px}
+.c-item{display:flex;align-items:center;gap:7px;text-decoration:none;font-weight:600;font-size:14.5px;color:var(--blue)}
+.c-item svg{width:18px;height:18px;color:var(--orange)}
+.c-item:hover span{text-decoration:underline}
+.lang{display:flex;border:1px solid #D5DFEC;border-radius:8px;overflow:hidden}
+.lang a{text-decoration:none;font-size:12.5px;font-weight:700;padding:5px 9px;color:var(--muted)}
+.lang a.on{background:var(--blue);color:#fff}
+
+/* ---------- hero video ---------- */
+.vhero{position:relative;width:100%;aspect-ratio:16/9;max-height:calc(100vh - 74px);background:#E4D8C4 url(../images/hero-poster.jpg) center/cover;overflow:hidden}
+.vhero video{display:block;width:100%;height:100%;object-fit:cover}
+.vh-btn{position:absolute;right:18px;top:18px;width:42px;height:42px;border-radius:50%;border:0;cursor:pointer;
+  background:rgba(16,32,74,.55);backdrop-filter:blur(4px);display:grid;place-items:center;transition:background .2s}
+.vh-btn:hover{background:var(--orange)}
+.i-pause{width:12px;height:14px;border-left:4px solid #fff;border-right:4px solid #fff}
+.i-play{width:0;height:0;border-left:13px solid #fff;border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:4px}
+/* ---------- hero illustration ---------- */
+.hero{background:#E7F0FB}
+.hero-hint{display:none;position:sticky;left:0;text-align:center;font-size:12px;color:var(--muted);padding:6px 0;background:#E7F0FB}
+.site{display:block;width:100%;height:auto;max-height:calc(100vh - 74px);margin:0 auto}
+.site .lbl{font:500 13px "Be Vietnam Pro",sans-serif;fill:#2A3A5E;paint-order:stroke;stroke:rgba(255,255,255,.85);stroke-width:4px}
+.site .lbl.strong{font-weight:700;fill:var(--blue)}
+.site .leader{stroke:#2A3A5E;stroke-width:1;opacity:.55}
+.site .hero-k{font:800 34px "Be Vietnam Pro",sans-serif;fill:var(--blue);letter-spacing:.02em}
+.site .hero-t{font:500 21px "Be Vietnam Pro",sans-serif;fill:#3A4C74}
+.slurry{fill:none;stroke-width:3;stroke-dasharray:10 8;animation:flow 1.6s linear infinite}
+.slurry.feed{stroke:var(--orange)}
+.slurry.ret{stroke:var(--blue2);animation-direction:reverse}
+@keyframes flow{to{stroke-dashoffset:-36}}
+.cutter{stroke:#2B3446;stroke-width:7;stroke-dasharray:5 4;animation:cut .35s linear infinite}
+@keyframes cut{to{stroke-dashoffset:-18}}
+.spoil circle{fill:#8C7656;animation:spoil 1.1s ease-out infinite}
+.spoil circle:nth-child(2){animation-delay:.35s}.spoil circle:nth-child(3){animation-delay:.7s}
+@keyframes spoil{from{transform:translate(0,0);opacity:1}to{transform:translate(-14px,4px);opacity:0}}
+.rods{animation:jack 9s ease-in-out infinite}
+@keyframes jack{0%,100%{transform:translateX(0)}50%{transform:translateX(-14px)}}
+
+/* ---------- TBM-body tagline ---------- */
+.tagline{position:relative;margin:-62px auto 0;max-width:1080px;padding:0 24px;z-index:5}
+.tbm{position:relative;display:flex;align-items:center;height:118px;padding-right:96px}
+.tbm-body{position:relative;flex:1;height:100%;border-radius:14px 0 0 14px;overflow:hidden;
+  background:linear-gradient(180deg,#3567C9 0%,var(--blue) 45%,#142F72 100%);
+  box-shadow:0 18px 40px -18px rgba(20,47,114,.6),inset 0 2px 0 rgba(255,255,255,.25)}
+.tbm-body::before{content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(90deg,transparent 0 118px,rgba(255,255,255,.12) 118px 120px)}
+.tbm-body::after{content:"";position:absolute;left:0;right:0;bottom:0;height:10px;background:var(--orange)}
+.ticker{position:absolute;inset:0 0 10px 0;overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 62%,transparent 94%);
+          mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 62%,transparent 94%)}
+.ticker span{position:absolute;top:50%;left:0;white-space:nowrap;color:#fff;font-weight:800;
+  font-size:clamp(20px,2.6vw,32px);letter-spacing:.02em;animation:drive 11s linear infinite}
+.ticker span em{font-style:normal;color:#FFB27F}
+@keyframes drive{from{left:0;transform:translate(-100%,-50%)}to{left:100%;transform:translate(0,-50%)}}
+.cutter-svg{position:absolute;right:0;top:50%;width:150px;height:150px;transform:translateY(-50%);
+  filter:drop-shadow(0 10px 18px rgba(20,47,114,.45))}
+.spin{transform-origin:80px 80px;animation:spin 3.2s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ---------- service cards ---------- */
+.services{padding:56px 0 30px}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:1000px;margin:0 auto}
+.card{position:relative;display:block;text-decoration:none;background:#fff;border:1px solid #DCE5F1;border-radius:16px;
+  padding:30px 30px 26px 30px;overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s}
+.card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--orange)}
+.card:hover{transform:translateY(-4px);border-color:transparent;box-shadow:0 22px 44px -20px rgba(232,112,47,.55),0 0 0 2px var(--orange)}
+.card .tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.16em;color:var(--orange);margin-bottom:6px}
+.card h3{margin:0 0 8px;font-size:30px;font-weight:800;color:var(--blue)}
+.card p{margin:0 0 18px;color:var(--muted);font-size:15.5px}
+.card .go{display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--blue)}
+.card .go::after{content:"→";transition:transform .25s}
+.card:hover .go::after{transform:translateX(5px)}
+.card .ico{position:absolute;right:22px;top:22px;width:62px;height:62px;opacity:.9}
+
+/* ---------- strengths ---------- */
+.strengths{padding:26px 0 70px}
+.s-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1000px;margin:0 auto}
+.s-item{background:var(--bg);border-radius:14px;padding:22px 22px 20px}
+.s-item .n{font-size:13px;font-weight:800;color:var(--orange);letter-spacing:.1em}
+.s-item h4{margin:6px 0 6px;font-size:18px;color:var(--blue)}
+.s-item p{margin:0;font-size:14.5px;color:var(--muted)}
+
+
+/* ---------- about ---------- */
+.about{background:var(--bg);padding:64px 0 72px}
+.ab-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.ab-over{font-size:13px;font-weight:800;letter-spacing:.18em;color:var(--orange)}
+.about h2{margin:8px 0 14px;font-size:32px;color:var(--blue)}
+.about h3{margin:28px 0 12px;font-size:22px;color:var(--blue)}
+.ab-left p{margin:0;color:#3A4C74;font-size:16px}
+.ab-list{list-style:none;margin:0;padding:0}
+.ab-list li{position:relative;padding:12px 14px 12px 46px;margin-bottom:10px;background:#fff;border:1px solid #DCE5F1;border-radius:12px;color:#3A4C74;font-size:15px}
+.ab-list li::before{content:"";position:absolute;left:16px;top:50%;width:16px;height:16px;margin-top:-8px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 4px rgba(232,112,47,.18)}
+.ab-list b,.core b{color:var(--blue)}
+.ab-right{background:#fff;border-radius:18px;border:1px solid #DCE5F1;box-shadow:0 22px 46px -30px rgba(20,47,114,.5);padding:10px 26px}
+.vm{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid #E6ECF5}
+.vm:last-child{border-bottom:0}
+.vm-i{flex:0 0 40px;height:40px;border-radius:10px;background:var(--blue);color:#fff;font-weight:800;font-size:14px;display:grid;place-items:center}
+.vm h4{margin:2px 0 4px;font-size:18px;color:var(--blue)}
+.vm p{margin:0;color:#3A4C74;font-size:15px}
+.core{margin:2px 0 0;padding-left:18px;color:#3A4C74;font-size:15px}
+.core li{margin-bottom:6px}
+@media (max-width:860px){.ab-grid{grid-template-columns:1fr;gap:30px}.ab-right{padding:6px 18px}}
+/* ---------- footer ---------- */
+.foot{background:var(--blue);color:#DCE6F7;padding:40px 0 18px;border-top:5px solid var(--orange)}
+.foot-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:30px}
+.f-name{margin:0;font-weight:800;color:#fff;font-size:17px}
+.f-en{margin:6px 0 0;font-size:13px;letter-spacing:.04em;opacity:.85}
+.f-info p{margin:0 0 8px;font-size:14.5px}
+.f-info a{color:#fff}
+.f-copy{margin-top:22px;padding-top:14px;border-top:1px solid rgba(255,255,255,.18);font-size:13px;opacity:.75}
+
+/* ---------- responsive ---------- */
+@media (max-width:1020px){.nav{display:none}}
+@media (max-width:760px){
+  .bar{height:60px;gap:12px} .brand svg{width:38px;height:38px} .brand-txt b{font-size:19px} .brand-txt small{display:none}
+  .c-item span{display:none} .c-item{width:36px;height:36px;justify-content:center;border-radius:50%;background:#EEF3FB}
+  .contact{gap:8px}
+  .hero{overflow-x:auto;-webkit-overflow-scrolling:touch;position:relative} .site{width:1100px;max-width:none;max-height:none}
+  .hero-hint{display:block}
+  .tagline{margin-top:18px} .tbm{height:88px;padding-right:66px} .cutter-svg{width:110px;height:110px}
+  .cards,.s-grid,.foot-grid{grid-template-columns:1fr}
+  .site .lbl{font-size:17px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+
+.p-hero{background:linear-gradient(180deg,#F3F7FD,#fff);padding:56px 0 34px}
+.p-hero .over{font-size:13px;font-weight:800;letter-spacing:.18em;color:var(--orange)}
+.p-hero h1{margin:8px 0 14px;font-size:clamp(30px,4vw,48px);line-height:1.15;color:var(--blue);font-weight:800;max-width:900px}
+.p-hero .lead{font-size:18px;color:#3A4C74;max-width:860px;margin:0 0 24px}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+.badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid #D7E2F1;border-radius:999px;padding:8px 15px;font-weight:600;font-size:14px;color:var(--blue)}
+.badge::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--orange)}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;text-decoration:none;font-weight:700;padding:12px 22px;border-radius:10px;border:2px solid var(--orange);background:var(--orange);color:#fff}
+.btn.ghost{background:transparent;color:var(--blue);border-color:var(--blue)}
+
+.crew{padding:24px 0 10px}
+.sec-h{max-width:1240px;margin:0 auto 14px;padding:0 24px;display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.sec-h h2{margin:0;font-size:30px;color:var(--blue)}
+.sec-h p{margin:4px 0 0;color:var(--muted)}
+.switch{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:14px;color:var(--blue);text-decoration:none;border:1.5px solid var(--blue);border-radius:10px;padding:8px 13px}
+.switch:hover{background:var(--blue);color:#fff}
+.hint{display:inline-flex;align-items:center;gap:10px;background:#FFF2E9;color:#9A4512;font-weight:600;font-size:14px;padding:9px 14px;border-radius:10px}
+.hint i{width:22px;height:22px;border-radius:50%;background:var(--orange);color:#fff;font-style:normal;font-size:12px;font-weight:800;display:grid;place-items:center;animation:bob 1.6s ease-in-out infinite}
+@keyframes bob{50%{transform:scale(1.18)}}
+
+.stage{position:relative;max-width:1480px;margin:0 auto;padding:0 16px;display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:16px;align-items:stretch}
+.scroller{border-radius:16px;overflow:hidden;box-shadow:0 20px 50px -30px rgba(20,47,114,.5);border:1px solid #DCE5F1}
+.tbm-svg{display:block;width:100%;height:auto}
+.tbm-svg .eq{font:600 14px "Be Vietnam Pro",sans-serif;fill:#3A4C74;paint-order:stroke;stroke:rgba(255,255,255,.8);stroke-width:4px}
+.tbm-svg .eq-w{font:700 11px "Be Vietnam Pro",sans-serif;fill:#fff;letter-spacing:.06em}
+.tbm-svg .muck{stroke:#8C7656;stroke-width:5;stroke-dasharray:9 7;animation:belt 1.4s linear infinite}
+@keyframes belt{to{stroke-dashoffset:-32}}
+.tbm-svg .drop{stroke:#8C7656;stroke-width:6;stroke-dasharray:5 5;animation:belt .6s linear infinite}
+.tbm-svg .cutter{stroke:#2B3446;stroke-width:10;stroke-dasharray:7 5;animation:cut .35s linear infinite}
+@keyframes cut{to{stroke-dashoffset:-24}}
+.tbm-svg .train{animation:train 10s ease-in-out infinite}
+@keyframes train{0%,100%{transform:translateX(0)}50%{transform:translateX(-26px)}}
+.tbm-svg .spark{animation:spark .5s steps(2) infinite}
+@keyframes spark{50%{opacity:.15}}
+
+.tbm-svg .wk{cursor:pointer;transition:opacity .25s,filter .25s}
+.tbm-svg .wk .hit{fill:transparent}
+.tbm-svg .wk .wave{display:none}
+.tbm-svg .wk.hov .arms{display:none}
+.tbm-svg .wk.hov .wave{display:inline}
+.tbm-svg .wk .hand{transform-origin:6px -25px;animation:wave .45s ease-in-out infinite alternate}
+@keyframes wave{from{transform:rotate(-22deg)}to{transform:rotate(18deg)}}
+.tbm-svg .wk.hov{filter:brightness(1.12) drop-shadow(0 0 5px #FFD24D)}
+.tbm-svg .wk.hov .halo{opacity:.9;fill:#FFC233}
+.tbm-svg .hot.hov .disc{fill:var(--blue)}
+.tbm-svg.has-sel .wk.hov,.tbm-svg.has-sel .hot.hov{opacity:1}
+.tbm-svg .wk .halo{fill:#FFD24D;opacity:.28;transition:opacity .2s}
+.tbm-svg .wk:hover .halo{opacity:.55}
+.tbm-svg.has-sel .wk:not(.sel){opacity:.45}
+.tbm-svg .wk.sel .halo{opacity:.85;fill:#FFC233}
+.tbm-svg .hot{cursor:pointer;outline:none}
+.tbm-svg .hot .lead{stroke:var(--blue);stroke-width:1.6;stroke-dasharray:3 3}
+.tbm-svg .hot .dot{fill:var(--blue)}
+.tbm-svg .hot .disc{fill:var(--orange);stroke:#fff;stroke-width:3;transition:fill .2s}
+.tbm-svg .hot .num{font:800 15px "Be Vietnam Pro",sans-serif;fill:#fff;pointer-events:none}
+.tbm-svg .hot .pulse{fill:var(--orange);transform-box:fill-box;transform-origin:center;animation:pulse 2s ease-out infinite}
+@keyframes pulse{from{transform:scale(1);opacity:.55}to{transform:scale(2);opacity:0}}
+.tbm-svg .hot:hover .disc,.tbm-svg .hot:focus-visible .disc{fill:var(--blue)}
+.tbm-svg .hot.sel .disc{fill:var(--blue)}
+.tbm-svg .hot.sel .pulse{fill:var(--blue)}
+.tbm-svg.has-sel .hot:not(.sel){opacity:.55}
+
+.panel{position:relative;overflow:auto;background:#fff;
+  border-radius:14px;box-shadow:0 18px 40px -16px rgba(20,47,114,.45);border:1px solid #DCE5F1;padding:20px 22px 18px}
+.panel .p-top{display:flex;align-items:center;gap:12px}
+.panel .p-num{flex:0 0 42px;height:42px;border-radius:50%;background:var(--orange);color:#fff;display:grid;place-items:center;font-weight:800;font-size:18px}
+.panel h3{margin:0;padding-right:18px;font-size:20px;line-height:1.25;color:var(--blue)}
+.panel .en{margin:2px 0 0;font-size:13.5px;color:var(--muted);font-style:italic}
+.panel h4{margin:14px 0 6px;font-size:13px;letter-spacing:.12em;color:var(--orange)}
+.panel ul{margin:0;padding-left:18px;color:#2A3A5E;font-size:14.5px}
+.panel li{margin-bottom:5px}
+.panel .exp{margin-top:12px;display:flex;gap:8px;align-items:flex-start;background:#EEF4FC;border-radius:10px;padding:9px 11px;font-size:13.5px;color:var(--blue);font-weight:600}
+.panel .nav2{display:flex;justify-content:space-between;margin-top:14px;gap:8px}
+.panel button{font:inherit;cursor:pointer}
+.panel .pn{border:1px solid #D5DFEC;background:#fff;border-radius:8px;padding:7px 12px;font-weight:600;color:var(--blue);font-size:13.5px}
+.panel .pn:hover{border-color:var(--blue)}
+.panel .x{position:absolute;right:10px;top:8px;border:0;background:none;font-size:22px;color:var(--muted);line-height:1}
+.panel .intro p{margin:6px 0 0;color:#3A4C74;font-size:14.5px}
+
+.legend{max-width:1240px;margin:22px auto 0;padding:0 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.legend button{font:inherit;text-align:left;cursor:pointer;display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid #DCE5F1;border-radius:10px;padding:10px 12px;transition:border-color .2s,box-shadow .2s}
+.legend button:hover,.legend button[aria-pressed="true"]{border-color:var(--orange);box-shadow:0 0 0 2px rgba(232,112,47,.25)}
+.legend b{flex:0 0 26px;height:26px;border-radius:50%;background:var(--orange);color:#fff;display:grid;place-items:center;font-size:13px}
+.legend span{font-weight:700;color:var(--blue);font-size:14px;line-height:1.3}
+.legend small{display:block;font-weight:500;color:var(--muted);font-size:12.5px}
+
+.why{padding:64px 0 20px}
+.why h2,.models h2{text-align:center;color:var(--blue);font-size:30px;margin:0 0 8px}
+.why .sub,.models .sub{text-align:center;color:var(--muted);max-width:760px;margin:0 auto 30px}
+.w-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.w-item{background:#fff;border:1px solid #DCE5F1;border-top:4px solid var(--orange);border-radius:12px;padding:20px}
+.w-item h3{margin:0 0 8px;font-size:17.5px;color:var(--blue)}
+.w-item p{margin:0;color:var(--muted);font-size:14.5px}
+.models{padding:44px 0 60px}
+.m-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.m-item{background:var(--bg);border-radius:12px;padding:22px}
+.m-item .n{font-weight:800;color:var(--orange);font-size:13px;letter-spacing:.12em}
+.m-item h3{margin:6px 0 6px;color:var(--blue);font-size:18px}
+.m-item p{margin:0;color:var(--muted);font-size:14.5px}
+.cta{background:linear-gradient(110deg,var(--blue) 0%,#2853B8 100%);color:#fff;padding:44px 0}
+.cta .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.cta h2{margin:0 0 6px;font-size:26px}
+.cta p{margin:0;opacity:.9}
+.cta .btn.ghost{color:#fff;border-color:#fff}
+
+@media (max-width:1100px){.stage{grid-template-columns:1fr}.legend{grid-template-columns:repeat(3,1fr)}.w-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:900px){
+  .scroller{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .tbm-svg{width:1250px;max-width:none}
+  .legend{grid-template-columns:1fr 1fr}
+  .m-grid,.w-grid{grid-template-columns:1fr}
+}
+@media (max-width:560px){.legend{grid-template-columns:1fr}}
+
+.scroll-mt{scroll-margin-top:90px}
+.viewer{position:relative;height:min(74vh,660px);min-height:420px;border-radius:16px;overflow:hidden;border:1px solid #DCE5F1;background:#E9F1FB;box-shadow:0 20px 50px -30px rgba(20,47,114,.5)}
+.viewer canvas{display:block;width:100%;height:100%;touch-action:none;cursor:grab}
+.viewer canvas:active{cursor:grabbing}
+.markers{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.mk{position:absolute;left:0;top:0;pointer-events:auto;width:30px;height:30px;padding:0;border-radius:50%;border:3px solid #fff;background:var(--orange);
+  color:#fff;font:800 13px "Be Vietnam Pro",sans-serif;cursor:pointer;animation:mkp 2s ease-out infinite;transition:background .2s,opacity .2s}
+@keyframes mkp{from{box-shadow:0 0 0 0 rgba(232,112,47,.6)}to{box-shadow:0 0 0 14px rgba(232,112,47,0)}}
+.mk.hov,.mk.sel{background:var(--blue);animation:none;box-shadow:0 0 0 4px rgba(28,63,148,.25)}
+.markers.has-sel .mk:not(.sel):not(.hov){opacity:.5}
+.views{position:absolute;left:12px;top:12px;display:flex;gap:6px;flex-wrap:wrap;z-index:2}
+.views button{font:600 13px "Be Vietnam Pro",sans-serif;cursor:pointer;border:1px solid #D5DFEC;background:rgba(255,255,255,.92);color:var(--blue);border-radius:8px;padding:7px 11px}
+.views button.on,.views button:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+.help{position:absolute;left:12px;bottom:10px;font-size:12.5px;color:#3A4C74;background:rgba(255,255,255,.88);padding:6px 10px;border-radius:8px;pointer-events:none}
+.loading{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font-weight:600}
+.switch{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:14px;color:var(--blue);text-decoration:none;border:1.5px solid var(--blue);border-radius:10px;padding:8px 13px}
+.switch:hover{background:var(--blue);color:#fff}
+@media (min-width:901px){
+  .crew{height:calc(100vh - 74px);min-height:600px;display:flex;flex-direction:column;padding:12px 0 16px}
+  .crew .sec-h{margin-bottom:10px}.crew .sec-h h2{font-size:24px}
+  .crew .hint{padding:6px 12px;font-size:13px}
+  .crew .stage{flex:1;min-height:0;width:100%}
+  .crew .viewer{height:100%;min-height:0}
+  .crew .panel{max-height:100%}
+  .crew .legend{margin-top:10px;grid-template-columns:repeat(6,1fr);gap:6px;width:100%;max-width:1480px;padding:0 16px}
+  .crew .legend{grid-template-columns:repeat(auto-fill,minmax(215px,1fr))}
+  .crew .legend button{padding:5px 8px;gap:7px;align-items:center}
+  .crew .legend b{flex:0 0 22px;height:22px;font-size:11.5px}
+  .crew .legend span{font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.crew .legend small{display:none}
+}
+@media (min-width:901px) and (max-width:1100px){.crew .stage{grid-template-columns:minmax(0,1fr) 280px}.crew .legend{grid-template-columns:repeat(auto-fill,minmax(170px,1fr))}}
+@media (max-width:900px){.viewer{height:62vh}.help{display:none}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="index.html" aria-label="Vitunnel – home">
+      <svg width="46" height="46" viewBox="0 0 100 100" aria-hidden="true">
+  <circle cx="50" cy="50" r="47" fill="#fff"/>
+  <circle cx="50" cy="50" r="40" fill="none" stroke="#1C3F94" stroke-width="9"/>
+  <circle cx="50" cy="50" r="28" fill="none" stroke="#3F86DB" stroke-width="9"/>
+  <circle cx="50" cy="50" r="18" fill="#5DB6EE"/>
+  <g stroke="#fff" stroke-width="5" stroke-linecap="butt">
+    <line x1="2" y1="50" x2="98" y2="50"/>
+    <line x1="50" y1="54" x2="24" y2="94"/><line x1="50" y1="54" x2="76" y2="94"/>
+  </g>
+  <path d="M20,9 L50,56 L80,9" fill="none" stroke="#fff" stroke-width="15" stroke-linejoin="miter"/>
+  <path d="M20,9 L50,56 L80,9" fill="none" stroke="#E8702F" stroke-width="9" stroke-linejoin="miter"/>
+</svg>
+      <span class="brand-txt"><b>VITUNNEL</b><small>BUILDING UNDERGROUND INFRASTRUCTURE</small></span>
+    </a>
+    <nav class="nav">
+      <a href="tbm.html" class="on">TBM Support</a>
+      <a href="mtbm.html">mTBM</a>
+    </nav>
+    <div class="contact">
+      <a href="mailto:contact@vitunnel.com" class="c-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3z M3 6l9 7 9-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>contact@vitunnel.com</span></a>
+      <a href="tel:+84968988497" class="c-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z" fill="currentColor"/></svg><span>+84 968 988 497</span></a>
+      <div class="lang" aria-label="Language"><a href="../tbm.html" hreflang="vi" lang="vi" title="Tiếng Việt">VI</a><a class="on" href="tbm.html" hreflang="en" lang="en" title="English">EN</a><a href="../fr/tbm.html" hreflang="fr" lang="fr" title="Français">FR</a></div>
+    </div>
+  </div>
+</header>
+<main>
+  <section class="p-hero">
+    <div class="wrap">
+      <span class="over">SERVICE 01 · TBM SUPPORT</span>
+      <h1>TBM technicians from Europe</h1>
+      <p class="lead">VITUNNEL provides highly skilled, European-standard technicians with a wide range of specialities and hands-on experience operating, maintaining and building on many TBM tunnel projects across Europe.</p>
+      <div class="btns"><a class="btn" href="#so-do">Explore the crew diagram ↓</a><a class="btn ghost" href="mailto:contact@vitunnel.com?subject=TBM staffing proposal">Request a staffing proposal</a></div>
+    </div>
+  </section>
+
+  <section class="crew scroll-mt" id="so-do" aria-label="Crew diagram">
+    <div class="sec-h">
+      <div><h2>One crew – every position on a TBM site</h2></div>
+      <span class="hint"><i>1</i>Rotate the model, click a worker or a number to see the role &amp; duties</span>
+    </div>
+    <div class="stage">
+      <div class="viewer" id="viewer">
+        <div class="loading">Loading 3D model…</div>
+        <div class="markers" id="markers"></div>
+        <div class="views" aria-label="Views">
+          <button data-view="all" class="on">Overview</button><button data-view="cutter">Cutterhead</button><button data-view="tbm">TBM</button>
+          <button data-view="backup">Back-up</button><button data-view="shaft">Shaft &amp; site</button>
+        </div>
+        <div class="help">Drag to rotate · Scroll to zoom · Right-click to pan</div>
+      </div>
+      <aside class="panel" id="panel" aria-live="polite">
+        <div class="intro">
+          <div class="p-top"><div class="p-num">11</div><div><h3>positions on a TBM site</h3><p class="en">TBM site crew</p></div></div>
+          <p>A TBM running 24/7 needs a fully coordinated crew. Rotate the model and click the <b>orange numbers</b> or <b>any worker</b> to see each role and its duties.</p>
+          <div class="exp">✔ All our staff have worked on TBM tunnel projects in Europe</div>
+        </div>
+      </aside>
+    </div>
+    <div class="legend" aria-label="List of positions"><button data-role="1" aria-pressed="false"><b>1</b><span>TBM operators</span></button><button data-role="2" aria-pressed="false"><b>2</b><span>TBM mechanics / mechanical foremen</span></button><button data-role="3" aria-pressed="false"><b>3</b><span>TBM / tunnel foremen & supervisors</span></button><button data-role="4" aria-pressed="false"><b>4</b><span>TBM electrical / PLC personnel</span></button><button data-role="5" aria-pressed="false"><b>5</b><span>Erector / segment crane operators</span></button><button data-role="6" aria-pressed="false"><b>6</b><span>Grout plant operators / grouters</span></button><button data-role="7" aria-pressed="false"><b>7</b><span>Pipe fitters / helpers</span></button><button data-role="8" aria-pressed="false"><b>8</b><span>Welders</span></button><button data-role="9" aria-pressed="false"><b>9</b><span>Crane / loader operators</span></button><button data-role="10" aria-pressed="false"><b>10</b><span>Riggers</span></button><button data-role="11" aria-pressed="false"><b>11</b><span>Mechanical management support</span></button></div>
+  </section>
+
+  <section class="why wrap">
+    <h2>Why choose VITUNNEL TBM crews</h2>
+    <p class="sub">A TBM’s performance depends first on the people who run it. We provide crews proven on European job sites.</p>
+    <div class="w-grid">
+      <div class="w-item"><h3>Hands-on experience</h3><p>Our technicians have worked on many metro, road and utility tunnel projects in Europe, on many different types of TBM.</p></div>
+      <div class="w-item"><h3>Skill &amp; discipline</h3><p>Used to working to the strict safety standards and technical procedures of European sites.</p></div>
+      <div class="w-item"><h3>Coordinated crews</h3><p>From operators, mechanics and electrical/PLC staff to the back-up crew – a team used to working together, so the machine reaches steady production quickly.</p></div>
+      <div class="w-item"><h3>A Vietnam–Europe bridge</h3><p>French-trained VITUNNEL engineers coordinate the teams, ensuring smooth communication and skills transfer to Vietnamese staff.</p></div>
+    </div>
+  </section>
+
+  <section class="models wrap">
+    <h2>Flexible ways to work together</h2>
+    <p class="sub">Adapted to the size, machine type and phase of each project.</p>
+    <div class="m-grid">
+      <div class="m-item"><span class="n">01</span><h3>Full operating crew</h3><p>Complete shift staffing for the whole TBM site.</p></div>
+      <div class="m-item"><span class="n">02</span><h3>Staff for specific positions</h3><p>Key positions to reinforce the contractor’s existing crew.</p></div>
+      <div class="m-item"><span class="n">03</span><h3>Start-up &amp; handover</h3><p>Support during machine assembly and launch, and training of local teams to take over.</p></div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <div><h2>Preparing a TBM project?</h2><p>Contact VITUNNEL for a staffing proposal tailored to your machine and schedule.</p></div>
+      <div class="btns"><a class="btn" href="mailto:contact@vitunnel.com?subject=TBM staffing proposal">contact@vitunnel.com</a><a class="btn ghost" href="tel:+84968988497">+84 968 988 497</a></div>
+    </div>
+  </section>
+</main>
+<footer class="foot" id="lien-he">
+  <div class="wrap foot-grid">
+    <div>
+      <p class="f-name">VIETNAM TUNNEL ENGINEERING SOLUTIONS JOINT STOCK COMPANY</p>
+      <p class="f-en">CÔNG TY CỔ PHẦN GIẢI PHÁP HẦM VIỆT NAM</p>
+    </div>
+    <div class="f-info">
+      <p><b>Head office:</b> 4th floor, MHD Trung Văn Office Building, 29 Tố Hữu Street, Đại Mỗ Ward, Hanoi, Vietnam</p>
+      <p><b>Email:</b> <a href="mailto:contact@vitunnel.com">contact@vitunnel.com</a> &nbsp;·&nbsp; <b>Phone:</b> <a href="tel:+84968988497">0968 988 497</a></p>
+      <p><b>Website:</b> vitunnel.com</p>
+    </div>
+  </div>
+  <div class="wrap f-copy">© 2026 VITUNNEL. All rights reserved.</div>
+</footer>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+<script type="module">import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
+
+const R = {"1": ["TBM operators", "", ["Run the machine from the control cabin through each excavation cycle", "Control face pressure, thrust, torque and advance rate", "Follow the guidance system to keep the machine on line and level", "Keep the boring log and report parameters to engineers and supervisors"]], "2": ["TBM mechanics / mechanical foremen", "", ["Carry out routine maintenance and pre-shift checks", "Inspect and replace cutters and wear parts on the cutterhead", "Troubleshoot hydraulics, main drive and conveyors", "Plan maintenance stops to minimise downtime"]], "3": ["TBM / tunnel foremen & supervisors", "", ["Coordinate manpower and the boring–ring-building cycle on each shift", "Enforce safety and working procedures in the tunnel", "Liaise with engineers, survey and surface teams", "Monitor and report progress and quality"]], "4": ["TBM electrical / PLC personnel", "", ["Operate and maintain the machine’s MV/LV electrical systems", "Diagnose PLC, sensor and control-system faults", "Extend power cables and lighting as the drive advances", "Routinely test protection devices, earthing and electrical safety"]], "5": ["Erector / segment crane operators", "", ["Receive segments from the supply train and feed the erector", "Build each ring in the right sequence with the key in place", "Control joint gaps, steps and gasket quality", "Work with the operator to retract thrust rams and build rings safely"]], "6": ["Grout plant operators / grouters", "", ["Mix grout to the design mix", "Inject tail-void grout in step with the advance", "Control grouting pressure and volume to limit surface settlement", "Clean and maintain the mixing plant and grout lines"]], "7": ["Pipe fitters / helpers", "", ["Extend water, compressed-air and ventilation lines as the drive advances", "Install and leak-test pipe joints", "Repair leaks and replace damaged pipes and valves", "Support the mechanical and grouting crews on the back-up"]], "8": ["Welders", "", ["Carry out weld repairs on the machine, cutterhead and back-up", "Apply hard-facing to parts in contact with the ground", "Fabricate brackets, platforms and site fittings", "Follow welding and fire-prevention procedures underground"]], "9": ["Crane / loader operators", "", ["Operate the gantry crane to lower segments and materials down the shaft", "Lift equipment and spare parts for machine maintenance", "Operate loaders to handle spoil on site", "Work with the riggers using standard signals"]], "10": ["Riggers", "", ["Sling loads to the lifting plan with the right slings and accessories", "Signal to the crane operator", "Inspect slings, hooks and shackles before every lift", "Set up and control the exclusion zone around lifting areas"]], "11": ["Mechanical management support", "", ["Plan preventive maintenance for the machine and back-up", "Manage spare parts and consumables and order them on time", "Track cutter wear and analyse operating data", "Prepare technical reports for site management"]]};
+const ORANGE = 0xE8702F, BLUE = 0x1C3F94, BLUE2 = 0x2F6FD0, LIGHT = 0x5DB6EE, YELLOW = 0xE9C445, RED = 0xC8432A;
+
+const host = document.getElementById('viewer');
+const overlay = document.getElementById('markers');
+const panel = document.getElementById('panel');
+const intro = panel.innerHTML;
+
+// ---------------------------------------------------------------- renderer
+let renderer;
+try { renderer = new THREE.WebGLRenderer({ antialias: true }); }
+catch (e) { host.querySelector('.loading').innerHTML = 'Your browser cannot display 3D. Please open this page in an up-to-date Chrome, Edge, Firefox or Safari.'; throw e; }
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+host.prepend(renderer.domElement);
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xE9F1FB);
+scene.fog = new THREE.Fog(0xE9F1FB, 160, 340);
+const camera = new THREE.PerspectiveCamera(40, 1, 0.1, 800);
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true; controls.dampingFactor = 0.08;
+controls.minDistance = 3; controls.maxDistance = 190;
+controls.maxPolarAngle = Math.PI * 0.86;
+
+scene.add(new THREE.HemisphereLight(0xF3F7FF, 0xB59A74, 1.5));
+const sun = new THREE.DirectionalLight(0xffffff, 1.6); sun.position.set(30, 60, 50); scene.add(sun);
+const fill = new THREE.DirectionalLight(0xffffff, 0.55); fill.position.set(-40, 10, 40); scene.add(fill);
+
+// ---------------------------------------------------------------- constants
+const GS = 14;                    // ground surface level (≈10 m cover above the crown)
+const ZS = 1.6;                   // vertical section plane (front cut)
+const A0 = -0.64 * Math.PI, A1 = 0.64 * Math.PI;   // kept arc of round elements (back side)
+const SH = { x0: 57.2, x1: 81.2, z0: -10.4, floor: -5.0 };
+const DX = SH.x1 - 72.8;            // shift of surface items east of the shaft
+const CX = (SH.x0 + SH.x1) / 2;   // crane hoist line
+const XF = SH.x1 - 9.5;           // thrust frame (struts behind it to the east wall)   // launch shaft (outer)
+const DECK = -1.32;
+
+// ---------------------------------------------------------------- helpers
+const M = (color, o = {}) => new THREE.MeshStandardMaterial({ color, roughness: 0.65, metalness: 0.15, ...o });
+const mat = {
+  steel: M(0x8E99A6, { metalness: 0.45, roughness: 0.45 }), dark: M(0x3D4652), darker: M(0x2B3446),
+  orange: M(ORANGE, { metalness: 0.3, roughness: 0.45 }), red: M(RED, { metalness: .25, roughness: .5 }),
+  blue: M(BLUE), blue2: M(BLUE2), light: M(LIGHT), white: M(0xF4F6F9), yellow: M(YELLOW, { metalness: .3, roughness: .5 }),
+  concrete: M(0xB4BDC7), lining: M(0xC9D0D8, { roughness: .85 }), muck: M(0x8C7656, { roughness: 1 }),
+  grate: M(0x55606D, { metalness: 0.4 }), seg: M(0xC2CAD3),
+  glass: new THREE.MeshStandardMaterial({ color: 0xBFE3F7, transparent: true, opacity: 0.28, roughness: 0.1, side: THREE.DoubleSide, depthWrite: false }),
+};
+function box(w, h, d, m, x = 0, y = 0, z = 0, parent = scene) {
+  const o = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), m); o.position.set(x, y, z); parent.add(o); return o;
+}
+function cyl(r, h, m, x, y, z, parent = scene, seg = 24) {
+  const o = new THREE.Mesh(new THREE.CylinderGeometry(r, r, h, seg), m); o.position.set(x, y, z); parent.add(o); return o;
+}
+function beam(a, b, r, m, parent = scene, seg = 14) {
+  const A = new THREE.Vector3(...a), B = new THREE.Vector3(...b), d = B.clone().sub(A);
+  const o = new THREE.Mesh(new THREE.CylinderGeometry(r, r, d.length(), seg), m);
+  o.position.copy(A).addScaledVector(d, 0.5);
+  o.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), d.normalize()); parent.add(o); return o;
+}
+function bar(a, b, w, m, parent = scene) {           // square bar between 2 points
+  const A = new THREE.Vector3(...a), B = new THREE.Vector3(...b), d = B.clone().sub(A);
+  const o = new THREE.Mesh(new THREE.BoxGeometry(w, d.length(), w), m);
+  o.position.copy(A).addScaledVector(d, 0.5);
+  o.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), d.normalize()); parent.add(o); return o;
+}
+// arc section (r1..r2, a0..a1) in the YZ plane, extruded along X, centred on x = 0
+function segGeom(r1, r2, a0, a1, len) {
+  const s = new THREE.Shape();
+  s.absarc(0, 0, r2, a0, a1, false); s.absarc(0, 0, r1, a1, a0, true);
+  const g = new THREE.ExtrudeGeometry(s, { depth: len, bevelEnabled: false, curveSegments: Math.max(4, Math.round((a1 - a0) * 10)) });
+  g.translate(0, 0, -len / 2); g.rotateY(Math.PI / 2); return g;
+}
+function canvasTex(w, h, draw) {
+  const c = document.createElement('canvas'); c.width = w; c.height = h; draw(c.getContext('2d'), w, h);
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.wrapS = t.wrapT = THREE.RepeatWrapping;
+  t.anisotropy = 4; return t;
+}
+const rnd = (() => { let s = 7; return () => (s = (s * 16807) % 2147483647) / 2147483647; })();
+
+// ---------------------------------------------------------------- soil section (front face with strata)
+const strata = canvasTex(256, 768, (g, w, h) => {
+  const L = [['#C9B48F', 0], ['#B99C74', .09], ['#D2BE96', .3], ['#A98C67', .52], ['#C2A982', .7], ['#9C805F', .86]];
+  L.forEach(([c, y0], i) => { g.fillStyle = c; g.fillRect(0, y0 * h, w, ((L[i + 1] ? L[i + 1][1] : 1) - y0) * h + 1); });
+  for (let i = 0; i < 2600; i++) { g.fillStyle = `rgba(0,0,0,${rnd() * .09})`; g.beginPath(); g.arc(rnd() * w, rnd() * h, rnd() * 2.4 + .4, 0, 7); g.fill(); }
+  for (let i = 0; i < 700; i++) { g.fillStyle = `rgba(255,255,255,${rnd() * .12})`; g.fillRect(rnd() * w, rnd() * h, 2, 2); }
+});
+strata.wrapT = THREE.ClampToEdgeWrapping;
+const YB = -10, H = GS - YB;
+strata.repeat.set(1 / 12, 1 / H); strata.offset.set(0, -YB / H);
+const soilMat = new THREE.MeshStandardMaterial({ map: strata, roughness: 1, side: THREE.DoubleSide });
+const XL = -14, XR = 116, ZB = -26;
+let soilFace, curtain;
+{
+  const ty = Math.sqrt(3.9 ** 2 - ZS ** 2);
+  const s = new THREE.Shape();
+  [[XL, YB], [XR, YB], [XR, GS], [SH.x1, GS], [SH.x1, SH.floor - .6], [SH.x0, SH.floor - .6], [SH.x0, -ty], [-0.9, -ty], [-0.9, ty], [SH.x0, ty], [SH.x0, GS], [XL, GS]]
+    .forEach(([x, y], i) => i ? s.lineTo(x, y) : s.moveTo(x, y));
+  soilFace = new THREE.Mesh(new THREE.ShapeGeometry(s), soilMat); soilFace.position.z = ZS; scene.add(soilFace);
+  curtain = new THREE.Group(); curtain.visible = false; scene.add(curtain);
+  { const c1 = new THREE.Mesh(new THREE.PlaneGeometry(80, H), soilMat); c1.position.set(XL + 40, (GS + YB) / 2, 4.4); curtain.add(c1);
+    [GS, YB].forEach(y => { const c = new THREE.Mesh(new THREE.PlaneGeometry(80, 2.9), M(0x9C805F, { side: THREE.DoubleSide })); c.rotation.x = Math.PI / 2; c.position.set(XL + 40, y, 3.0); curtain.add(c); }); }
+  // side faces of the block
+  { const bt = new THREE.Mesh(new THREE.PlaneGeometry(XR - XL, ZS - ZB), M(0x9C805F, { side: THREE.DoubleSide })); bt.rotation.x = -Math.PI / 2; bt.position.set((XL + XR) / 2, YB, (ZS + ZB) / 2); scene.add(bt);
+    const bk = new THREE.Mesh(new THREE.PlaneGeometry(XR - XL, H), soilMat); bk.position.set((XL + XR) / 2, (GS + YB) / 2, ZB); scene.add(bk); }
+  [XL, XR].forEach(x => { const p = new THREE.Mesh(new THREE.PlaneGeometry(ZS - ZB, H), soilMat); p.rotation.y = Math.PI / 2; p.position.set(x, (GS + YB) / 2, (ZS + ZB) / 2); scene.add(p); });
+}
+
+// ---------------------------------------------------------------- utilities crossing above the tunnel
+[[6, 9.6, .95, mat.concrete], [16, 11.6, .42, M(0x2F6FD0)], [23.5, 12.4, .26, M(0xF2C230)], [40, 10.8, .38, M(0x2F6FD0)], [48, 12.2, .3, M(0x4DA167)]]
+  .forEach(([x, y, r, m]) => { const p = cyl(r, ZS - ZB + .1, m, x, y, (ZS + ZB) / 2, scene, 28); p.rotation.x = Math.PI / 2;
+    if (r > .5) { const inner = cyl(r * .8, .02, mat.darker, x, y, ZS + .06, scene, 28); inner.rotation.x = Math.PI / 2; } });
+{ const db = box(1.3, .8, ZS - ZB + .1, M(0xB8C0C9), 31, 12.0, (ZS + ZB) / 2);
+  [[-.35, .15], [0, .15], [.35, .15], [-.35, -.15], [0, -.15], [.35, -.15]].forEach(([dx, dy]) => { const c = cyl(.11, .03, M(dy > 0 ? 0xD9442E : 0x333333), 31 + dx, 12 + dy, ZS + .06); c.rotation.x = Math.PI / 2; }); }
+
+// ---------------------------------------------------------------- ground surface, road, buildings
+const ground = M(0xA9B1BA), asphalt = M(0x5B6573, { roughness: .9 }), walk = M(0xD5DBE2);
+const T = .5; // surface slab thickness
+box(SH.x0 - XL, T, ZS - ZB, ground, (XL + SH.x0) / 2, GS - T / 2, (ZS + ZB) / 2);
+box(XR - SH.x1, T, ZS - ZB, ground, (SH.x1 + XR) / 2, GS - T / 2, (ZS + ZB) / 2);
+box(SH.x1 - SH.x0, T, SH.z0 - ZB, ground, (SH.x0 + SH.x1) / 2, GS - T / 2, (SH.z0 + ZB) / 2);
+box(50 - XL, .04, 6.2, asphalt, (XL + 50) / 2, GS + .02, -3.7);         // main road (above the tunnel)
+box(6, .04, 18.2, asphalt, 47, GS + .02, -15.9);                         // cross street
+box(50 - XL, .05, 2.2, walk, (XL + 50) / 2, GS + .025, .5);              // front sidewalk
+box(44 - XL, .05, 1.8, walk, (XL + 44) / 2, GS + .025, -7.7);
+const dash = new THREE.MeshBasicMaterial({ color: 0xffffff });
+for (let x = XL + 1; x < 43; x += 3) box(1.4, .02, .14, dash, x, GS + .05, -3.7);
+for (let z = -9; z > ZB + 1; z -= 3) box(.14, .02, 1.4, dash, 47, GS + .05, z);
+// buildings
+const winTex = canvasTex(64, 64, (g) => { g.fillStyle = '#fff'; g.fillRect(0, 0, 64, 64); g.fillStyle = '#9DB7D5'; g.fillRect(12, 14, 40, 30); g.fillStyle = '#E3E8EE'; g.fillRect(0, 58, 64, 6); });
+const facade = [0xF1EDE6, 0xE3EAF3, 0xEDE3D6, 0xDCE5EF, 0xF4F1EA];
+function building(x, z, w, d, h) {
+  const t = winTex.clone(); t.needsUpdate = true; t.repeat.set(Math.round(w / 2.2), Math.round(h / 3));
+  const tz = winTex.clone(); tz.needsUpdate = true; tz.repeat.set(Math.round(d / 2.2), Math.round(h / 3));
+  const c = facade[Math.floor(rnd() * facade.length)];
+  const side = new THREE.MeshStandardMaterial({ color: c, map: t, roughness: .8 }), sideZ = new THREE.MeshStandardMaterial({ color: c, map: tz, roughness: .8 });
+  const roof = M(0xB3BCC6);
+  const b = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), [sideZ, sideZ, roof, roof, side, side]);
+  b.position.set(x, GS + h / 2, z); scene.add(b);
+}
+for (let x = XL + 1; x < 42;) { const w = 5 + rnd() * 5; building(x + w / 2, -12.5 - rnd() * 2, w - .8, 7 + rnd() * 3, 7 + rnd() * 16); x += w; }
+for (let x = 53; x < XR - 3;) { const w = 5 + rnd() * 6; building(x + w / 2, -18 - rnd() * 2, w - .8, 7, 8 + rnd() * 18); x += w; }
+for (let z = -12; z > ZB + 4;) { const d = 5 + rnd() * 4; building(38 - 2.5, z - d / 2, 5, d - .8, 6 + rnd() * 12); z -= d; }
+[2, 12, 22, 32].forEach(x => { cyl(.12, 1.6, M(0x7A5E43), x, GS + .8, -.2); const c = new THREE.Mesh(new THREE.SphereGeometry(1.0, 14, 10), M(0x8DBF94, { roughness: .9 })); c.position.set(x, GS + 2.2, -.2); scene.add(c); });
+// site hoarding
+const hoard = M(0x2F5FB8);
+box(.12, 2, SH.z0 - 1 - ZS, hoard, 52, GS + 1, (SH.z0 - 1 + ZS) / 2);
+box(XR - 52, 2, .12, hoard, (52 + XR) / 2, GS + 1, SH.z0 - 1.6);
+
+// ---------------------------------------------------------------- tunnel lining (segmental, visible thickness)
+const RING = 1.5, X_L0 = 9.6, X_L1 = SH.x0;
+{
+  const geos = [], span = A1 - A0, n = 6, gap = .012;
+  for (let i = 0, x = X_L0; x < X_L1 - .01; i++, x += RING) {
+    const len = Math.min(RING, X_L1 - x) - .03;
+    const off = (i % 2) * span / n / 2, cuts = [A0];
+    for (let k = 1; k < n; k++) cuts.push(A0 + off + k * span / n);
+    cuts.push(A1);
+    for (let k = 0; k < cuts.length - 1; k++) {
+      if (cuts[k + 1] - cuts[k] < .05) continue;
+      const g = segGeom(3.38, 3.73, cuts[k] + (k ? gap : 0), cuts[k + 1] - (k < cuts.length - 2 ? gap : 0), len);
+      g.translate(x + len / 2 + .015, 0, 0); geos.push(g);
+    }
+  }
+  scene.add(new THREE.Mesh(mergeGeometries(geos), mat.lining));
+}
+[-1.5, 1.5].forEach(z => box(XF, .12, .14, mat.dark, XF / 2, -3.2, z));
+for (let x = 11; x < XF; x += 1.2) box(.25, .1, 3.6, mat.grate, x, -3.3, 0);
+
+// ---------------------------------------------------------------- TBM shield (front shield + tail skin)
+const shieldG = mergeGeometries([(() => { const g = segGeom(3.62, 3.9, A0, A1, 6.2); g.translate(3.1, 0, 0); return g; })(),
+  (() => { const g = segGeom(3.76, 3.9, A0, A1, 4.8); g.translate(8.6, 0, 0); return g; })()]);
+scene.add(new THREE.Mesh(shieldG, mat.orange));
+{ const band = new THREE.Mesh(segGeom(3.9, 3.95, A0, A1, .4), M(0x9F4718)); band.position.x = 6.2; scene.add(band); }
+// bulkhead (pressure wall) with man-lock
+{ const s = new THREE.Shape(); s.moveTo(0, 0); s.absarc(0, 0, 3.62, A0, A1, false); s.lineTo(0, 0);
+  const g = new THREE.ExtrudeGeometry(s, { depth: .3, bevelEnabled: false, curveSegments: 40 }); g.rotateY(Math.PI / 2);
+  const bh = new THREE.Mesh(g, M(0xC9773F)); bh.position.x = 1.05; scene.add(bh);
+  const lock = cyl(.75, 2.2, mat.steel, 2.4, 1.5, -1.6); lock.rotation.z = Math.PI / 2; }
+const drive = new THREE.Mesh(new THREE.TorusGeometry(1.25, .32, 16, 40), mat.steel); drive.rotation.y = Math.PI / 2; drive.position.x = 1.7; scene.add(drive);
+// thrust cylinders resting on the last ring's edge
+for (let i = 0; i < 13; i++) {
+  const a = A0 + .12 + i * ((A1 - A0 - .24) / 12), y = Math.sin(a) * 3.5, z = -Math.cos(a) * 3.5;
+  beam([4.9, y, z], [7.7, y, z], .16, mat.dark);
+  beam([7.7, y, z], [9.42, y, z], .09, M(0xDDE3EA, { metalness: .7, roughness: .25 }));
+  const shoe = box(.16, .42, .42, mat.orange, 9.5, y, z); shoe.rotation.x = -a;
+}
+// screw conveyor
+beam([1.4, -2.7, -1.45], [10.4, 1.95, -1.45], .45, mat.steel);
+beam([1.4, -2.7, -1.45], [10.4, 1.95, -1.45], .5, new THREE.MeshStandardMaterial({ color: 0x55606D, wireframe: true }));
+box(8.6, .12, 3.9, mat.grate, 5.6, -1.38, -.35);
+
+// ---------------------------------------------------------------- cutterhead (red, X-pattern, disc cutters)
+const cutter = new THREE.Group(); cutter.position.x = -0.35; scene.add(cutter);
+const face = new THREE.Group(); face.rotation.y = -Math.PI / 2; cutter.add(face);   // local +Z = towards the face (−X world)
+{ const d = cyl(3.85, .6, mat.red, 0, 0, 0, face, 72); d.rotation.x = Math.PI / 2;
+  const rim = new THREE.Mesh(new THREE.TorusGeometry(3.82, .16, 10, 72), M(0x8E99A6, { metalness: .5 })); rim.position.z = .3; face.add(rim);
+  const slotM = M(0x2B3446);
+  for (let k = 0; k < 4; k++) {                               // muck openings beside the N/E/S/W arms
+    [-1, 1].forEach(sd => { const sl = new THREE.Mesh(new THREE.RingGeometry(1.3, 3.45, 10, 1, 0, .16), slotM);
+      sl.rotation.z = k * Math.PI / 2 + (sd > 0 ? .3 : -.46); sl.position.z = .305; face.add(sl); });
+  }
+  const greyM = M(0xB8C1CB, { metalness: .4 });
+  for (let k = 0; k < 4; k++) {                               // main diagonal arms (X)
+    const g = new THREE.Group(); g.rotation.z = Math.PI / 4 + k * Math.PI / 2; face.add(g);
+    box(1.0, 3.3, .25, mat.red, 0, 2.0, .42, g);
+    [-.42, .42].forEach(dx => box(.08, 3.1, .12, greyM, dx, 2.05, .6, g));
+    for (let y = .7; y < 3.6; y += .38) box(.84, .05, .08, greyM, 0, y, .62, g);
+  }
+  for (let k = 0; k < 4; k++) {                               // secondary arms with scrapers
+    const g = new THREE.Group(); g.rotation.z = k * Math.PI / 2; face.add(g);
+    box(.62, 2.3, .2, mat.red, 0, 2.5, .4, g);
+    for (let y = 1.5; y < 3.7; y += .32) box(.7, .1, .22, greyM, 0, y, .58, g);
+  }
+  // disc cutters (instanced): rows beside the diagonal arms + gauge cutters on the rim
+  const pos = [];
+  for (let k = 0; k < 4; k++) { const th = Math.PI / 4 + k * Math.PI / 2, ux = Math.cos(th), uy = Math.sin(th), px = -uy, py = ux;
+    for (let i = 0, r = .95; r < 3.3; i++, r += .48) [-1, 1].forEach(sd => { const o = (.78 + (i % 2) * .22) * sd;
+      pos.push([r * ux + o * px, r * uy + o * py, th + Math.PI / 2]); }); }
+  for (let k = 0; k < 24; k++) { const a = (k + .5) * Math.PI * 2 / 24; pos.push([3.58 * Math.cos(a), 3.58 * Math.sin(a), a]); }
+  const dc = new THREE.InstancedMesh(new THREE.BoxGeometry(.2, .42, .24), M(0x2B3446, { metalness: .5 }), pos.length);
+  const o = new THREE.Object3D();
+  pos.forEach(([x, y, a], i) => { o.position.set(x, y, .45); o.rotation.set(0, 0, a); o.updateMatrix(); dc.setMatrixAt(i, o.matrix); });
+  face.add(dc);
+  const hub = box(1.1, 1.1, .4, M(0x9AA4AF, { metalness: .5 }), 0, 0, .5, face); hub.rotation.z = Math.PI / 4;
+  [[.25, .25], [-.25, .25], [.25, -.25], [-.25, -.25]].forEach(([x, y]) => box(.18, .34, .18, mat.darker, x, y, .78, face));
+}
+
+// ---------------------------------------------------------------- segment erector (image-2 style)
+const erector = new THREE.Group(); erector.position.x = 8.5; scene.add(erector);
+bar([0, .02, -2.6], [0, .02, 1.4], .2, mat.dark, erector);               // erector beam
+const ebase = box(1.5, .18, 1.1, mat.dark, 0, .15, 0, erector);
+const column = cyl(.3, 1, M(0x55606D, { metalness: .5 }), 0, 0, 0, erector);
+const rods = [-.5, .5].map(dz => cyl(.075, 1, M(0xDDE3EA, { metalness: .7, roughness: .25 }), 0, 0, dz, erector));
+const grip = box(1.6, .16, 1.25, mat.dark, 0, 0, 0, erector);
+const gripPad = box(1.3, .08, 1.0, M(0x8E99A6), 0, 0, 0, erector);
+const lifted = new THREE.Mesh(segGeom(3.08, 3.38, Math.PI / 2 - .32, Math.PI / 2 + .32, 1.4), mat.seg); erector.add(lifted);
+box(1.6, .5, 2.2, mat.dark, 0, -1.1, -.2, erector);                     // segment feeder
+
+// ---------------------------------------------------------------- back-up gantries (handrails, stairs, truss conveyor)
+const railM = mat.yellow;
+function handrail(x0, x1, z, y) {
+  for (let x = x0; x <= x1 + .01; x += 1) box(.06, 1.05, .06, railM, x, y + .52, z);
+  box(x1 - x0, .06, .06, railM, (x0 + x1) / 2, y + 1.05, z); box(x1 - x0, .05, .05, railM, (x0 + x1) / 2, y + .55, z);
+}
+for (let i = 0; i < 4; i++) {
+  const x0 = 10.6 + i * 7.6, x1 = x0 + 7.1;
+  [x0 + .2, x1 - .2].forEach(x => [-2.3, 1.45].forEach(z => box(.2, 4.6, .2, mat.white, x, -.9, z)));
+  [-2.3, 1.45].forEach(z => box(x1 - x0, .24, .24, mat.white, (x0 + x1) / 2, 1.35, z));
+  box(.2, .2, 3.75, mat.white, x0 + .2, 1.35, -.42); box(.2, .2, 3.75, mat.white, x1 - .2, 1.35, -.42);
+  box(x1 - x0, .12, 3.9, mat.grate, (x0 + x1) / 2, -1.38, -.4);
+  handrail(x0 + .1, x1 - .1, 1.42, -1.32);
+  [x0 + .8, x1 - .8].forEach(x => [-1.5, 1.5].forEach(z => { const w = cyl(.28, .2, mat.darker, x, -2.86, z); w.rotation.x = Math.PI / 2; }));
+}
+// access stair at the end of the back-up
+{ const n = 8; for (let k = 0; k < n; k++) box(.32, .06, 1.0, railM, 42.4 - k * .3, -3.05 + k * .215, 1.0);
+  bar([42.6, -3.1, .45], [40.2, -1.35, .45], .08, railM); bar([42.6, -3.1, 1.55], [40.2, -1.35, 1.55], .08, railM);
+  bar([42.6, -2.1, 1.55], [40.2, -.35, 1.55], .05, railM); }
+// 1 – operator cabin
+box(2.8, .1, 2.3, mat.white, 13.6, .95, -.4);
+box(2.8, 2.3, 2.3, mat.glass, 13.6, -.2, -.4);
+{ const e = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(2.8, 2.3, 2.3)), new THREE.LineBasicMaterial({ color: 0x3D4652 })); e.position.set(13.6, -.2, -.4); scene.add(e); }
+box(.6, .9, 1.8, mat.darker, 12.5, -.9, -.4);
+// red hydraulic power pack (as in the reference)
+cyl(.9, 3.2, mat.red, 16.8, -.2, -1.35).rotation.z = Math.PI / 2;
+box(.3, 2.0, 2.0, mat.white, 15.1, -.3, -1.2);
+// 4 – transformer + PLC
+box(2.0, 2.3, 1.5, mat.blue, 20.2, -.2, -1.4);
+box(1.3, 2.1, .6, M(0xC9D1DA), 22.3, -.3, -1.8);
+[0x4DA167, 0xF2C230, 0xD9442E].forEach((c, i) => box(.12, .12, .05, new THREE.MeshBasicMaterial({ color: c }), 21.9 + i * .3, .5, -1.48));
+// 6 – grout plant
+cyl(.75, 2.4, mat.light, 27.0, -.15, -1.3); cyl(.75, 2.4, mat.light, 28.8, -.15, -1.3);
+box(1.0, .9, .9, mat.dark, 30.4, -.9, -1.4);
+// 8 – welding station
+box(.25, 2.6, .25, mat.steel, 35.0, -.1, -1.5);
+const spark = new THREE.Mesh(new THREE.SphereGeometry(.09, 8, 8), new THREE.MeshBasicMaterial({ color: 0xFFE07A }));
+spark.position.set(34.9, .15, -1.25); scene.add(spark);
+const sparkLight = new THREE.PointLight(0xFFC14D, 3, 5); sparkLight.position.copy(spark.position); scene.add(sparkLight);
+// 7 – hose reel
+const reel = new THREE.Mesh(new THREE.TorusGeometry(.7, .2, 12, 32), mat.darker); reel.position.set(37.6, -.4, -1.3); scene.add(reel);
+// ventilation duct (continuous) + fans
+{ const duct = new THREE.CurvePath();
+  [[11, 2.45, -2.15], [61.6, 2.45, -2.15], [61.6, GS + 3, -2.15]].reduce((a, b) => (duct.add(new THREE.LineCurve3(new THREE.Vector3(...a), new THREE.Vector3(...b))), b));
+  scene.add(new THREE.Mesh(new THREE.TubeGeometry(duct, 200, .42, 16), M(0x3B5DB0)));
+  box(.9, 1.1, 1.1, mat.blue, 10.9, 2.45, -2.15); box(1.4, 1.3, 1.4, mat.blue, 61.6, GS + 3.4, -2.15); }
+
+// segment train
+const train = new THREE.Group(); scene.add(train);
+[43.8, 48.0].forEach(x => {
+  box(3.8, .35, 2.4, mat.dark, x, -2.55, 0, train);
+  for (let k = 0; k < 3; k++) { const s = new THREE.Mesh(segGeom(1.2, 1.5, Math.PI / 2 - .7, Math.PI / 2 + .7, 1.0), mat.seg); s.position.set(x, -3.3 + k * .32, 0); train.add(s); }
+  [x - 1.3, x + 1.3].forEach(wx => [-1.5, 1.5].forEach(z => { const w = cyl(.26, .2, mat.darker, wx, -2.86, z, train); w.rotation.x = Math.PI / 2; }));
+});
+box(2.6, 1.8, 2.4, mat.blue2, 52.1, -1.9, 0, train);
+
+// ---------------------------------------------------------------- launch shaft: walls, eye, faux tunnel, thrust frame
+const wallM = M(0xA9B3BE);
+const W = .8, shTop = GS, shBot = SH.floor;
+box(W, shTop - 3.9, ZS - SH.z0, wallM, SH.x0 + W / 2, (shTop + 3.9) / 2, (ZS + SH.z0) / 2);        // west wall above eye
+box(W, -3.9 - shBot, ZS - SH.z0, wallM, SH.x0 + W / 2, (-3.9 + shBot) / 2, (ZS + SH.z0) / 2);    // below eye
+box(W, 7.8, -3.9 - SH.z0, wallM, SH.x0 + W / 2, 0, (-3.9 + SH.z0) / 2);                          // beside eye
+box(W, shTop - shBot, ZS - SH.z0, wallM, SH.x1 - W / 2, (shTop + shBot) / 2, (ZS + SH.z0) / 2);   // east wall
+box(SH.x1 - SH.x0, shTop - shBot, W, wallM, (SH.x0 + SH.x1) / 2, (shTop + shBot) / 2, SH.z0 + W / 2); // back wall
+box(SH.x1 - SH.x0, .6, ZS - SH.z0, M(0x8E99A6), (SH.x0 + SH.x1) / 2, shBot - .3, (ZS + SH.z0) / 2); // base slab
+{ const eye = new THREE.Mesh(segGeom(3.73, 4.1, A0, A1, .5), mat.orange); eye.position.x = SH.x0 + W + .25; scene.add(eye); }
+// faux (temporary) rings – open at the top for crane access
+{ const geos = [];
+  for (let x = SH.x0 + W + .5; x < XF - .6; x += RING) { const g = segGeom(3.38, 3.73, A0, .2 * Math.PI, RING - .04); g.translate(x + RING / 2, 0, 0); geos.push(g); }
+  scene.add(new THREE.Mesh(mergeGeometries(geos), M(0xA7B0BA)));
+  for (let x = SH.x0 + 1.6; x < XF - .6; x += 1.5) { bar([x, -3.8, -3.6], [x, shBot, -3.6], .22, mat.yellow); bar([x, -3.75, 0], [x, shBot, 0], .22, mat.yellow); }
+}
+// thrust (reaction) frame + struts to the east wall
+{ const tf = M(0x2F5FB8, { metalness: .4 }); const xf = XF;
+  const ringPlate = new THREE.Mesh(segGeom(3.0, 3.9, A0, A1, .45), tf); ringPlate.position.x = xf; scene.add(ringPlate);
+  box(.6, 9.4, .6, tf, xf + .4, -.2, -4.2); box(.6, 9.4, .6, tf, xf + .4, -.2, 1.25);
+  box(.6, .6, 6.1, tf, xf + .4, 4.4, -1.47); box(.6, .6, 6.1, tf, xf + .4, -4.6, -1.47);
+  // raking struts from the frame down to anchor blocks on the shaft floor
+  const fl = shBot;
+  [-4.2, 1.25].forEach(z => {
+    [[4.1, 7.2], [1.6, 5.0], [-1.6, 2.8]].forEach(([y, dx]) => {
+      bar([xf + .7, y, z], [xf + dx, fl + .55, z], .3, mat.yellow);
+      box(1.2, .6, .9, wallM, xf + dx, fl + .3, z);
+    });
+    bar([xf + .7, -4.3, z], [xf + 2.8, fl + .55, z], .22, mat.yellow);
+  });
+  bar([xf + 7.2, fl + .6, -4.2], [xf + 7.2, fl + .6, 1.25], .2, mat.yellow);
+}
+// ladder on the back wall
+[SH.x1 - 2.6, SH.x1 - 2.0].forEach(x => box(.08, shTop - shBot + 1, .08, mat.dark, x, (shTop + shBot + 1) / 2, SH.z0 + W + .2));
+for (let y = shBot + .3; y < shTop + 1; y += .45) box(.66, .06, .06, mat.dark, SH.x1 - 2.3, y, SH.z0 + W + .2);
+
+// ---------------------------------------------------------------- conveyor: truss belt → up the shaft → muck bins
+const TOP = GS + 6.6;
+const BELT = [[10.4, 2.1, -1.4], [60.5, 2.1, -1.4], [60.5, TOP + .3, -1.4], [74.5 + DX, TOP, -1.4], [86 + DX, TOP, -1.4]].map(p => new THREE.Vector3(...p));
+for (let i = 0; i < BELT.length - 1; i++) {
+  const a = BELT[i], b = BELT[i + 1], d = b.clone().sub(a), L = d.length();
+  const bl = new THREE.Mesh(new THREE.BoxGeometry(L, .12, .9), mat.darker);
+  bl.position.copy(a).addScaledVector(d, .5).add(new THREE.Vector3(0, -.12, 0));
+  bl.quaternion.setFromUnitVectors(new THREE.Vector3(1, 0, 0), d.clone().normalize()); scene.add(bl);
+}
+// yellow lattice truss along the back-up
+[-.85, -1.95].forEach(z => {
+  box(31, .08, .08, railM, 26, 2.55, z); box(31, .08, .08, railM, 26, 1.8, z);
+  for (let x = 10.6; x < 41.4; x += .9) bar([x, 1.8, z], [x + .45, 2.55, z], .05, railM), bar([x + .45, 2.55, z], [x + .9, 1.8, z], .05, railM);
+});
+for (let x = 44; x < 58; x += 3.5) beam([x, 2.0, -1.4], [x, 3.3, -1.4], .04, mat.steel);
+// vertical conveyor tower in the shaft + head frame
+[[59.9, -2.0], [61.1, -2.0], [59.9, -.8], [61.1, -.8]].forEach(([x, z]) => box(.14, TOP - 1.5, .14, mat.yellow, x, (TOP + 3.1) / 2, z));
+const segLen = []; let BL = 0;
+for (let i = 0; i < BELT.length - 1; i++) { const l = BELT[i].distanceTo(BELT[i + 1]); segLen.push(l); BL += l; }
+function onBelt(s, out) {
+  for (let i = 0; i < segLen.length; i++) { if (s <= segLen[i]) return out.lerpVectors(BELT[i], BELT[i + 1], s / segLen[i]); s -= segLen[i]; }
+  return out.copy(BELT[BELT.length - 1]);
+}
+const NR = 300, rocks = new THREE.InstancedMesh(new THREE.DodecahedronGeometry(.17), mat.muck, NR); scene.add(rocks);
+const dummy = new THREE.Object3D(), tmpV = new THREE.Vector3();
+const rockOff = Array.from({ length: NR }, (_, i) => i * BL / NR + Math.random() * .2);
+// muck bins
+const BINS = [78.5 + DX, 83.5 + DX];
+BINS.forEach(x => {
+  box(3.6, 2.4, 3.2, mat.blue, x, TOP - 1.6, -1.4);
+  const cone = new THREE.Mesh(new THREE.ConeGeometry(2.3, 1.5, 4, 1, true), mat.blue); cone.rotation.set(Math.PI, Math.PI / 4, 0); cone.position.set(x, TOP - 3.55, -1.4); scene.add(cone);
+  [[-1.6, -2.9], [1.6, -2.9], [-1.6, .1], [1.6, .1]].forEach(([dx, z]) => box(.2, TOP - 2.8 - GS, .2, mat.grate, x + dx, (TOP - 2.8 + GS) / 2, z));
+});
+function truck() {
+  const t = new THREE.Group(); scene.add(t);
+  box(3.4, .35, 2.0, mat.dark, 0, .55, 0, t); box(2.6, 1.0, 2.0, mat.white, -.4, 1.2, 0, t);
+  box(2.4, .3, 1.8, mat.muck, -.4, 1.75, 0, t); box(1.0, 1.3, 2.0, mat.blue2, 1.55, 1.3, 0, t);
+  box(.05, .5, 1.6, mat.glass, 2.07, 1.6, 0, t);
+  [-1.2, 0, 1.3].forEach(x => [-1, 1].forEach(z => { const w = cyl(.38, .3, mat.darker, x, .38, z, t); w.rotation.x = Math.PI / 2; }));
+  return t;
+}
+const tLoad = truck(); tLoad.position.set(BINS[1] - .2, GS, -1.4);
+const tGo = truck(); tGo.position.set(88 + DX, GS, -5.2);
+const NF = 16, fall = new THREE.InstancedMesh(new THREE.DodecahedronGeometry(.13), mat.muck, NF); scene.add(fall);
+{ const pile = new THREE.Mesh(new THREE.ConeGeometry(2.4, 1.7, 20), mat.muck); pile.position.set(96 + DX, GS + .85, -2.5); scene.add(pile); }
+
+// gantry crane over the shaft
+const CY = GS + 11;
+[[SH.x0 - 1.6, SH.z0 - .6], [SH.x0 - 1.6, ZS - .4], [SH.x1 + 1.8, SH.z0 - .6], [SH.x1 + 1.8, ZS - .4]].forEach(([x, z]) => box(.55, CY - GS, .55, mat.orange, x, (CY + GS) / 2, z));
+[SH.z0 - .6, ZS - .4].forEach(z => box(SH.x1 - SH.x0 + 4, .7, .55, mat.orange, CX + .1, CY + .35, z));
+box(.7, .7, ZS - SH.z0 + .4, mat.orange, CX, CY + .35, (ZS + SH.z0) / 2 - .5);
+box(1.1, .55, 1.1, mat.dark, CX, CY - .2, -.2);
+const cable = cyl(.035, 1, mat.darker, CX, 0, -.2);
+const load = new THREE.Group(); scene.add(load);
+for (let k = 0; k < 3; k++) { const s = new THREE.Mesh(segGeom(1.6, 1.95, Math.PI / 2 - .6, Math.PI / 2 + .6, 1.3), mat.seg); s.position.set(0, -1.95 + k * .38, 0); load.add(s); }
+// crane cab
+box(1.8, .1, 1.8, mat.white, SH.x1 + 3.1, CY - 3.4, .4);
+box(1.8, 2.0, 1.8, mat.glass, SH.x1 + 3.1, CY - 2.4, .4);
+{ const e = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(1.8, 2.0, 1.8)), new THREE.LineBasicMaterial({ color: 0x3D4652 })); e.position.set(SH.x1 + 3.1, CY - 2.4, .4); scene.add(e); }
+// site office
+box(6, 2.6, 2.6, mat.white, 95 + DX, GS + 1.3, -7); box(6, .3, 2.62, mat.blue, 95 + DX, GS + 2.5, -7);
+[93.4 + DX, 95.6 + DX].forEach(x => box(1.2, .8, .05, M(0xBFE3F7), x, GS + 1.5, -5.68));
+for (let z = SH.z0; z <= ZS - .2; z += 1.1) box(.08, .9, .08, mat.orange, SH.x0 - .3, GS + .45, z);
+
+// ---------------------------------------------------------------- traffic
+const CAR_C = [0xF4F6F9, 0x1C3F94, 0xE8702F, 0x9FB3CC, 0x3D4652, 0x5DB6EE, 0xC9D3DF, 0xD9442E];
+function car(color, bus = false) {
+  const g = new THREE.Group(); scene.add(g);
+  if (bus) { box(6, 2.2, 2.1, M(ORANGE), 0, 1.5, 0, g); box(5.6, .7, 2.12, mat.glass, 0, 1.9, 0, g); }
+  else { box(3.6, .8, 1.7, M(color, { metalness: .4, roughness: .35 }), 0, .7, 0, g); box(2.0, .65, 1.6, M(0x9DB7D5, { roughness: .2 }), -.2, 1.4, 0, g); }
+  const wx = bus ? [-2, 2] : [-1.2, 1.2];
+  wx.forEach(x => [-.85, .85].forEach(z => { const w = cyl(.33, .25, mat.darker, x, .33, z, g); w.rotation.x = Math.PI / 2; }));
+  return g;
+}
+const LANES = [
+  [[XL - 2, -2.2], [45.6, -2.2], [45.6, ZB - 2]],
+  [[48.4, ZB - 2], [48.4, -5.2], [XL - 2, -5.2]],
+].map(pts => { const P = pts.map(([x, z]) => new THREE.Vector3(x, GS, z)); let L = 0; const seg = []; for (let i = 0; i < P.length - 1; i++) { const l = P[i].distanceTo(P[i + 1]); seg.push(l); L += l; } return { P, seg, L }; });
+const cars = [];
+LANES.forEach((ln, li) => { for (let k = 0; k < 7; k++) cars.push({ g: car(CAR_C[(k * 3 + li) % CAR_C.length], k === 3 && li === 0), ln, s: k * ln.L / 7 + rnd() * 3, v: 5.5 + rnd() * 1.5 }); });
+const cDir = new THREE.Vector3();
+function placeCar(c) {
+  let s = c.s % c.ln.L;
+  for (let i = 0; i < c.ln.seg.length; i++) {
+    if (s <= c.ln.seg[i]) { c.g.position.lerpVectors(c.ln.P[i], c.ln.P[i + 1], s / c.ln.seg[i]); cDir.subVectors(c.ln.P[i + 1], c.ln.P[i]); c.g.rotation.y = Math.atan2(-cDir.z, cDir.x); return; }
+    s -= c.ln.seg[i];
+  }
+}
+
+// ---------------------------------------------------------------- people
+const skin = M(0xE3B48F), legM = M(0x2B3446);
+const people = [];
+function person(role, x, y, z, rotY = 0, pose = 'stand', helmet = 0xFFFFFF) {
+  const g = new THREE.Group(); g.position.set(x, y, z); g.rotation.y = rotY; scene.add(g);
+  const vest = M(ORANGE), stripe = M(0xF4F6F9), head = skin.clone(), hel = M(helmet, { roughness: .3 });
+  const mats = [vest, stripe, head, hel];
+  [-.12, .12].forEach(dx => box(.18, .86, .22, legM, dx, .43, 0, g));
+  box(.52, .64, .3, vest, 0, 1.18, 0, g); box(.53, .07, .31, stripe, 0, 1.1, 0, g);
+  const h = new THREE.Mesh(new THREE.SphereGeometry(.14, 16, 12), head); h.position.y = 1.62; g.add(h);
+  const hm = new THREE.Mesh(new THREE.SphereGeometry(.17, 18, 10, 0, Math.PI * 2, 0, Math.PI / 2), hel); hm.position.y = 1.67; g.add(hm);
+  cyl(.21, .03, hel, 0, 1.67, 0, g, 20);
+  const mkArm = (sx) => {
+    const p = new THREE.Group(); p.position.set(sx * .32, 1.45, 0); g.add(p);
+    cyl(.065, .58, vest, 0, -.29, 0, p, 10);
+    const hand = new THREE.Mesh(new THREE.SphereGeometry(.07, 10, 8), head); hand.position.y = -.6; p.add(hand); return p;
+  };
+  const L = mkArm(-1), Rr = mkArm(1);
+  const rest = { L: [0, 0, -.12], R: [0, 0, .12] };
+  if (pose === 'work' || pose === 'weld' || pose === 'pipe') { rest.L = [-1.15, 0, -.1]; rest.R = [-1.2, 0, .1]; }
+  if (pose === 'tablet') { rest.R = [-1.1, 0, .1]; box(.26, .02, .2, mat.darker, 0, -.58, -.05, Rr).rotation.x = .3; }
+  if (pose === 'wave') rest.R = [0, 0, 2.5];
+  if (pose === 'weld') box(.22, .16, .05, mat.darker, 0, 1.63, .14, g);
+  if (pose === 'pipe') beam([-.35, .95, .5], [.6, .95, .5], .05, mat.steel, g);
+  L.rotation.set(...rest.L); Rr.rotation.set(...rest.R);
+  const ringM = new THREE.MeshBasicMaterial({ color: 0xFFC233, transparent: true, opacity: .4, depthWrite: false, side: THREE.DoubleSide });
+  const ring = new THREE.Mesh(new THREE.RingGeometry(.42, .68, 40), ringM); ring.rotation.x = -Math.PI / 2; ring.position.y = .03; g.add(ring);
+  const hit = new THREE.Mesh(new THREE.CylinderGeometry(.6, .6, 2.2, 10), new THREE.MeshBasicMaterial({ transparent: true, opacity: 0, depthWrite: false }));
+  hit.position.y = 1.0; g.add(hit);
+  const el = document.createElement('button');
+  el.className = 'mk'; el.textContent = role; el.dataset.role = role; el.setAttribute('aria-label', role + '. ' + R[role][0]);
+  overlay.appendChild(el);
+  const p = { role, g, mats, ring, ringM, hit, L, R: Rr, rest, el, hov: false, sel: false };
+  hit.userData.p = p; people.push(p); return p;
+}
+person(2, 4.3, DECK, .9, -Math.PI / 2, 'work');
+person(5, 11.1, DECK, .9, -Math.PI / 2, 'tablet');
+person(1, 13.2, DECK, -.3, -Math.PI / 2, 'stand');
+person(4, 22.2, DECK, -.1, Math.PI, 'work');
+person(3, 24.6, DECK, .9, -.3, 'tablet', LIGHT);
+person(6, 30.7, DECK, .3, Math.PI, 'work');
+person(8, 34.9, DECK, -.35, Math.PI, 'weld');
+person(7, 38.7, DECK, .7, -Math.PI / 2, 'pipe');
+person(9, SH.x1 + 3.1, CY - 3.35, .5, -Math.PI / 2, 'stand');
+person(10, 56.4, GS, -1.2, Math.PI / 2, 'wave');
+person(11, 55.6, -3.2, -1.0, Math.PI, 'tablet');
+
+// ---------------------------------------------------------------- views / camera flight
+const VIEWS = {
+  all: [[36, 40, 96], [46, 7, -4]],
+  tbm: [[-9, 4.5, 17], [6, -.5, 0]],
+  cutter: [[-13, .6, .4], [0, 0, 0]],
+  backup: [[26, 3.2, 16.5], [26, -.6, 0]],
+  shaft: [[54, 34, 52], [CX + 3, 6, -4]],
+};
+let fly = null;
+function flyTo(pos, tgt, dur = 1.1) {
+  fly = { p0: camera.position.clone(), t0: controls.target.clone(), p1: new THREE.Vector3(...pos), t1: new THREE.Vector3(...tgt), k: 0, dur };
+}
+const narrow = () => host.clientWidth / host.clientHeight < 1;
+if (narrow()) VIEWS.all = [[30, 60, 185], [46, 4, -4]];
+camera.position.set(...VIEWS.all[0]); controls.target.set(...VIEWS.all[1]);
+document.querySelectorAll('[data-view]').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('[data-view]').forEach(x => x.classList.toggle('on', x === b));
+  select(0, false); flyTo(...VIEWS[b.dataset.view]);
+}));
+
+// ---------------------------------------------------------------- interaction
+const ray = new THREE.Raycaster(), ptr = new THREE.Vector2();
+const hits = people.map(p => p.hit);
+let hovered = null, cur = 0, downXY = null;
+function setHov(role, on) { people.forEach(p => { if (p.role === role) p.hov = on; }); }
+function pick(ev) {
+  const r = renderer.domElement.getBoundingClientRect();
+  ptr.set(((ev.clientX - r.left) / r.width) * 2 - 1, -((ev.clientY - r.top) / r.height) * 2 + 1);
+  ray.setFromCamera(ptr, camera);
+  const h = ray.intersectObjects(hits, false)[0];
+  return h ? h.object.userData.p.role : null;
+}
+renderer.domElement.addEventListener('pointermove', ev => {
+  const role = pick(ev);
+  if (role !== hovered) { if (hovered) setHov(hovered, false); hovered = role; if (role) setHov(role, true); }
+  renderer.domElement.style.cursor = role ? 'pointer' : 'grab';
+});
+renderer.domElement.addEventListener('pointerdown', ev => { downXY = [ev.clientX, ev.clientY]; });
+renderer.domElement.addEventListener('pointerup', ev => {
+  if (!downXY || Math.hypot(ev.clientX - downXY[0], ev.clientY - downXY[1]) > 6) return;
+  const role = pick(ev); if (role) select(role);
+});
+overlay.addEventListener('click', e => { const b = e.target.closest('.mk'); if (b) select(+b.dataset.role); });
+overlay.addEventListener('mouseover', e => { const b = e.target.closest('.mk'); if (b) setHov(+b.dataset.role, true); });
+overlay.addEventListener('mouseout', e => { const b = e.target.closest('.mk'); if (b) setHov(+b.dataset.role, false); });
+
+function render(n) {
+  const r = R[n];
+  panel.innerHTML = '<button class="x" aria-label="Close">×</button>' +
+    '<div class="p-top"><div class="p-num">' + n + '</div><div><h3>' + r[0] + '</h3><p class="en">' + r[1] + '</p></div></div>' +
+    '<h4>MAIN DUTIES</h4><ul>' + r[2].map(d => '<li>' + d + '</li>').join('') + '</ul>' +
+    '<div class="exp">✔ Experienced on many TBM tunnel projects in Europe</div>' +
+    '<div class="nav2"><button class="pn" data-go="-1">← Previous role</button><button class="pn" data-go="1">Next role →</button></div>';
+}
+function select(n, move = true) {
+  cur = n;
+  people.forEach(p => { p.sel = p.role === n; p.el.classList.toggle('sel', p.sel); });
+  overlay.classList.toggle('has-sel', !!n);
+  document.querySelectorAll('.legend button').forEach(b => b.setAttribute('aria-pressed', +b.dataset.role === n));
+  if (!n) { panel.innerHTML = intro; return; }
+  render(n);
+  if (move) {
+    const p = people.find(q => q.role === n), w = new THREE.Vector3(); p.g.getWorldPosition(w);
+    const surface = w.y > 5, d = surface ? 13 : 8.5;
+    flyTo([w.x - d * .3, w.y + (surface ? 5 : 2.4), w.z + d], [w.x, w.y + 1, w.z]);
+    document.querySelectorAll('[data-view]').forEach(x => x.classList.remove('on'));
+  }
+}
+panel.addEventListener('click', e => {
+  if (e.target.classList.contains('x')) return select(0);
+  const g = e.target.dataset.go; if (g) select(((cur - 1 + (+g) + 11) % 11) + 1);
+});
+document.querySelectorAll('.legend button').forEach(b => b.addEventListener('click', () => {
+  select(+b.dataset.role); document.getElementById('so-do').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}));
+document.addEventListener('keydown', e => { if (e.key === 'Escape') select(0); });
+
+// ---------------------------------------------------------------- resize + loop
+function resize() {
+  const w = host.clientWidth, h = host.clientHeight;
+  renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix();
+}
+new ResizeObserver(resize).observe(host); resize();
+let visible = true;
+new IntersectionObserver(es => { visible = es[0].isIntersecting; }).observe(host);
+
+const clock = new THREE.Clock(), glow = new THREE.Color(0xFFB347), black = new THREE.Color(0);
+const proj = new THREE.Vector3();
+host.querySelector('.loading').remove();
+const ease = THREE.MathUtils.smoothstep;
+
+function tick() {
+  requestAnimationFrame(tick);
+  if (!visible) return;
+  const dt = Math.min(clock.getDelta(), .05), t = clock.elapsedTime;
+  cutter.rotation.x += dt * .6;
+  // erector: telescopic lift of a segment to the crown (10 s cycle)
+  const ph = (t % 10) / 10, e = ph < .6 ? ease(ph / .6, 0, 1) : ph < .85 ? 1 : 1 - (ph - .85) / .15;
+  const plate = .55 + e * 2.25;                    // underside of the gripper plate
+  grip.position.y = plate; gripPad.position.y = plate + .12;
+  lifted.position.y = plate + .16 - 3.08 * Math.cos(.32);
+  const colL = plate - .24; column.scale.y = colL; column.position.y = .24 + colL / 2;
+  rods.forEach(r => { r.scale.y = colL; r.position.y = .24 + colL / 2; });
+  train.position.x = Math.sin(t * .5) * .8;
+  spark.visible = Math.sin(t * 40) > -.2; sparkLight.intensity = spark.visible ? 2 + Math.random() * 2 : 0;
+  reel.rotation.z = t * .5;
+  for (let i = 0; i < NR; i++) {
+    onBelt((rockOff[i] + t * 2.4) % BL, tmpV);
+    dummy.position.copy(tmpV); dummy.position.y += .05; dummy.rotation.set(i, i * 2, 0); dummy.scale.setScalar(1); dummy.updateMatrix(); rocks.setMatrixAt(i, dummy.matrix);
+  }
+  rocks.instanceMatrix.needsUpdate = true;
+  for (let i = 0; i < NF; i++) {
+    const k = ((t * 1.3 + i / NF) % 1);
+    dummy.position.set(BINS[1] + Math.sin(i) * .25, TOP - 4.3 - k * 1.8, -1.4 + Math.cos(i * 3) * .25); dummy.updateMatrix(); fall.setMatrixAt(i, dummy.matrix);
+  }
+  fall.instanceMatrix.needsUpdate = true;
+  tGo.position.x = 88 + DX + ((t * 3) % 20); tGo.visible = tGo.position.x < XR - 2;
+  cars.forEach(c => { c.s += c.v * dt; placeCar(c); const p = c.g.position; c.g.visible = p.x > XL + 1.5 && p.z > ZB + 2; });
+  // crane hoist: lower segments into the shaft and back (12 s)
+  const cp = (t % 12) / 12, dn = cp < .42 ? cp / .42 : cp < .58 ? 1 : cp < .95 ? 1 - (cp - .58) / .37 : 0;
+  const ly = CY - 1.5 - (CY + .8) * ease(dn, 0, 1);
+  load.position.set(CX, ly, -.2);
+  cable.scale.y = CY - .5 - ly; cable.position.y = (CY - .5 + ly) / 2;
+
+  const inFront = camera.position.x < -1 && camera.position.z < ZS && camera.position.y < GS;
+  soilFace.visible = !inFront; curtain.visible = inFront;
+  people.forEach(p => {
+    const on = p.hov || p.sel;
+    p.mats.forEach(m => { m.emissive.lerp(on ? glow : black, .2); m.emissiveIntensity = p.sel ? .55 : .45; });
+    p.ringM.opacity = p.sel ? .95 : p.hov ? .85 : .35 + .15 * Math.sin(t * 3 + p.role);
+    p.ringM.color.set(p.sel ? ORANGE : 0xFFC233);
+    p.ring.scale.setScalar(on ? 1.15 + .08 * Math.sin(t * 6) : 1);
+    if (p.hov) { p.R.rotation.set(0, 0, 2.5 + .35 * Math.sin(t * 12)); p.L.rotation.set(...p.rest.L); }
+    else p.R.rotation.set(...p.rest.R);
+    p.g.getWorldPosition(proj); proj.y += 2.35; proj.project(camera);
+    const vis = !inFront && proj.z < 1 && Math.abs(proj.x) < 1.1 && Math.abs(proj.y) < 1.1;
+    p.el.style.display = vis ? '' : 'none';
+    if (vis) p.el.style.transform = `translate(${(proj.x + 1) / 2 * host.clientWidth}px,${(1 - proj.y) / 2 * host.clientHeight}px) translate(-50%,-50%)`;
+    p.el.classList.toggle('hov', p.hov);
+  });
+
+  if (fly) {
+    fly.k = Math.min(fly.k + dt / fly.dur, 1); const e2 = ease(fly.k, 0, 1);
+    camera.position.lerpVectors(fly.p0, fly.p1, e2); controls.target.lerpVectors(fly.t0, fly.t1, e2);
+    if (fly.k >= 1) fly = null;
+  }
+  controls.update();
+  renderer.render(scene, camera);
+}
+tick();
+</script>
+</body>
+</html>

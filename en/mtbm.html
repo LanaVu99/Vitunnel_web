@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>mTBM – Microtunnelling | VITUNNEL</title>
+<link rel="alternate" hreflang="vi" href="https://vitunnel.com/mtbm.html"><link rel="alternate" hreflang="en" href="https://vitunnel.com/en/mtbm.html"><link rel="alternate" hreflang="fr" href="https://vitunnel.com/fr/mtbm.html"><link rel="alternate" hreflang="x-default" href="https://vitunnel.com/mtbm.html">
+<meta name="description" content="VITUNNEL designs and builds microtunnels for water, sewer and urban utility networks, to European standards.">
+<style>
+:root{--blue:#1C3F94;--blue2:#2F6FD0;--light:#5DB6EE;--orange:#E8702F;--ink:#16244A;--muted:#5A6782;--bg:#F4F7FB}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:#fff;line-height:1.55}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+
+/* ---------- sticky top bar ---------- */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:saturate(1.4) blur(8px);
+  border-top:4px solid var(--orange);box-shadow:0 1px 0 #E3E9F2,0 6px 20px -12px rgba(28,63,148,.35)}
+.bar{display:flex;align-items:center;gap:28px;height:70px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand-txt{display:flex;flex-direction:column;line-height:1}
+.brand-txt b{font-size:24px;letter-spacing:.04em;color:var(--blue);font-weight:800}
+.brand-txt small{font-size:9.5px;letter-spacing:.22em;color:var(--orange);font-weight:700;margin-top:4px}
+.nav{display:flex;gap:6px}
+.nav a{text-decoration:none;font-weight:600;font-size:15px;padding:8px 14px;border-radius:8px;color:var(--ink)}
+.nav a:hover,.nav a.on{background:#EAF1FC;color:var(--blue)}
+.contact{margin-left:auto;display:flex;align-items:center;gap:18px}
+.c-item{display:flex;align-items:center;gap:7px;text-decoration:none;font-weight:600;font-size:14.5px;color:var(--blue)}
+.c-item svg{width:18px;height:18px;color:var(--orange)}
+.c-item:hover span{text-decoration:underline}
+.lang{display:flex;border:1px solid #D5DFEC;border-radius:8px;overflow:hidden}
+.lang a{text-decoration:none;font-size:12.5px;font-weight:700;padding:5px 9px;color:var(--muted)}
+.lang a.on{background:var(--blue);color:#fff}
+
+/* ---------- hero video ---------- */
+.vhero{position:relative;width:100%;aspect-ratio:16/9;max-height:calc(100vh - 74px);background:#E4D8C4 url(../images/hero-poster.jpg) center/cover;overflow:hidden}
+.vhero video{display:block;width:100%;height:100%;object-fit:cover}
+.vh-btn{position:absolute;right:18px;top:18px;width:42px;height:42px;border-radius:50%;border:0;cursor:pointer;
+  background:rgba(16,32,74,.55);backdrop-filter:blur(4px);display:grid;place-items:center;transition:background .2s}
+.vh-btn:hover{background:var(--orange)}
+.i-pause{width:12px;height:14px;border-left:4px solid #fff;border-right:4px solid #fff}
+.i-play{width:0;height:0;border-left:13px solid #fff;border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:4px}
+/* ---------- hero illustration ---------- */
+.hero{background:#E7F0FB}
+.hero-hint{display:none;position:sticky;left:0;text-align:center;font-size:12px;color:var(--muted);padding:6px 0;background:#E7F0FB}
+.site{display:block;width:100%;height:auto;max-height:calc(100vh - 74px);margin:0 auto}
+.site .lbl{font:500 13px "Be Vietnam Pro",sans-serif;fill:#2A3A5E;paint-order:stroke;stroke:rgba(255,255,255,.85);stroke-width:4px}
+.site .lbl.strong{font-weight:700;fill:var(--blue)}
+.site .leader{stroke:#2A3A5E;stroke-width:1;opacity:.55}
+.site .hero-k{font:800 34px "Be Vietnam Pro",sans-serif;fill:var(--blue);letter-spacing:.02em}
+.site .hero-t{font:500 21px "Be Vietnam Pro",sans-serif;fill:#3A4C74}
+.slurry{fill:none;stroke-width:3;stroke-dasharray:10 8;animation:flow 1.6s linear infinite}
+.slurry.feed{stroke:var(--orange)}
+.slurry.ret{stroke:var(--blue2);animation-direction:reverse}
+@keyframes flow{to{stroke-dashoffset:-36}}
+.cutter{stroke:#2B3446;stroke-width:7;stroke-dasharray:5 4;animation:cut .35s linear infinite}
+@keyframes cut{to{stroke-dashoffset:-18}}
+.spoil circle{fill:#8C7656;animation:spoil 1.1s ease-out infinite}
+.spoil circle:nth-child(2){animation-delay:.35s}.spoil circle:nth-child(3){animation-delay:.7s}
+@keyframes spoil{from{transform:translate(0,0);opacity:1}to{transform:translate(-14px,4px);opacity:0}}
+.rods{animation:jack 9s ease-in-out infinite}
+@keyframes jack{0%,100%{transform:translateX(0)}50%{transform:translateX(-14px)}}
+
+/* ---------- TBM-body tagline ---------- */
+.tagline{position:relative;margin:-62px auto 0;max-width:1080px;padding:0 24px;z-index:5}
+.tbm{position:relative;display:flex;align-items:center;height:118px;padding-right:96px}
+.tbm-body{position:relative;flex:1;height:100%;border-radius:14px 0 0 14px;overflow:hidden;
+  background:linear-gradient(180deg,#3567C9 0%,var(--blue) 45%,#142F72 100%);
+  box-shadow:0 18px 40px -18px rgba(20,47,114,.6),inset 0 2px 0 rgba(255,255,255,.25)}
+.tbm-body::before{content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(90deg,transparent 0 118px,rgba(255,255,255,.12) 118px 120px)}
+.tbm-body::after{content:"";position:absolute;left:0;right:0;bottom:0;height:10px;background:var(--orange)}
+.ticker{position:absolute;inset:0 0 10px 0;overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 62%,transparent 94%);
+          mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 62%,transparent 94%)}
+.ticker span{position:absolute;top:50%;left:0;white-space:nowrap;color:#fff;font-weight:800;
+  font-size:clamp(20px,2.6vw,32px);letter-spacing:.02em;animation:drive 11s linear infinite}
+.ticker span em{font-style:normal;color:#FFB27F}
+@keyframes drive{from{left:0;transform:translate(-100%,-50%)}to{left:100%;transform:translate(0,-50%)}}
+.cutter-svg{position:absolute;right:0;top:50%;width:150px;height:150px;transform:translateY(-50%);
+  filter:drop-shadow(0 10px 18px rgba(20,47,114,.45))}
+.spin{transform-origin:80px 80px;animation:spin 3.2s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ---------- service cards ---------- */
+.services{padding:56px 0 30px}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:1000px;margin:0 auto}
+.card{position:relative;display:block;text-decoration:none;background:#fff;border:1px solid #DCE5F1;border-radius:16px;
+  padding:30px 30px 26px 30px;overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s}
+.card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--orange)}
+.card:hover{transform:translateY(-4px);border-color:transparent;box-shadow:0 22px 44px -20px rgba(232,112,47,.55),0 0 0 2px var(--orange)}
+.card .tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.16em;color:var(--orange);margin-bottom:6px}
+.card h3{margin:0 0 8px;font-size:30px;font-weight:800;color:var(--blue)}
+.card p{margin:0 0 18px;color:var(--muted);font-size:15.5px}
+.card .go{display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--blue)}
+.card .go::after{content:"→";transition:transform .25s}
+.card:hover .go::after{transform:translateX(5px)}
+.card .ico{position:absolute;right:22px;top:22px;width:62px;height:62px;opacity:.9}
+
+/* ---------- strengths ---------- */
+.strengths{padding:26px 0 70px}
+.s-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1000px;margin:0 auto}
+.s-item{background:var(--bg);border-radius:14px;padding:22px 22px 20px}
+.s-item .n{font-size:13px;font-weight:800;color:var(--orange);letter-spacing:.1em}
+.s-item h4{margin:6px 0 6px;font-size:18px;color:var(--blue)}
+.s-item p{margin:0;font-size:14.5px;color:var(--muted)}
+
+
+/* ---------- about ---------- */
+.about{background:var(--bg);padding:64px 0 72px}
+.ab-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.ab-over{font-size:13px;font-weight:800;letter-spacing:.18em;color:var(--orange)}
+.about h2{margin:8px 0 14px;font-size:32px;color:var(--blue)}
+.about h3{margin:28px 0 12px;font-size:22px;color:var(--blue)}
+.ab-left p{margin:0;color:#3A4C74;font-size:16px}
+.ab-list{list-style:none;margin:0;padding:0}
+.ab-list li{position:relative;padding:12px 14px 12px 46px;margin-bottom:10px;background:#fff;border:1px solid #DCE5F1;border-radius:12px;color:#3A4C74;font-size:15px}
+.ab-list li::before{content:"";position:absolute;left:16px;top:50%;width:16px;height:16px;margin-top:-8px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 4px rgba(232,112,47,.18)}
+.ab-list b,.core b{color:var(--blue)}
+.ab-right{background:#fff;border-radius:18px;border:1px solid #DCE5F1;box-shadow:0 22px 46px -30px rgba(20,47,114,.5);padding:10px 26px}
+.vm{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid #E6ECF5}
+.vm:last-child{border-bottom:0}
+.vm-i{flex:0 0 40px;height:40px;border-radius:10px;background:var(--blue);color:#fff;font-weight:800;font-size:14px;display:grid;place-items:center}
+.vm h4{margin:2px 0 4px;font-size:18px;color:var(--blue)}
+.vm p{margin:0;color:#3A4C74;font-size:15px}
+.core{margin:2px 0 0;padding-left:18px;color:#3A4C74;font-size:15px}
+.core li{margin-bottom:6px}
+@media (max-width:860px){.ab-grid{grid-template-columns:1fr;gap:30px}.ab-right{padding:6px 18px}}
+/* ---------- footer ---------- */
+.foot{background:var(--blue);color:#DCE6F7;padding:40px 0 18px;border-top:5px solid var(--orange)}
+.foot-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:30px}
+.f-name{margin:0;font-weight:800;color:#fff;font-size:17px}
+.f-en{margin:6px 0 0;font-size:13px;letter-spacing:.04em;opacity:.85}
+.f-info p{margin:0 0 8px;font-size:14.5px}
+.f-info a{color:#fff}
+.f-copy{margin-top:22px;padding-top:14px;border-top:1px solid rgba(255,255,255,.18);font-size:13px;opacity:.75}
+
+/* ---------- responsive ---------- */
+@media (max-width:1020px){.nav{display:none}}
+@media (max-width:760px){
+  .bar{height:60px;gap:12px} .brand svg{width:38px;height:38px} .brand-txt b{font-size:19px} .brand-txt small{display:none}
+  .c-item span{display:none} .c-item{width:36px;height:36px;justify-content:center;border-radius:50%;background:#EEF3FB}
+  .contact{gap:8px}
+  .hero{overflow-x:auto;-webkit-overflow-scrolling:touch;position:relative} .site{width:1100px;max-width:none;max-height:none}
+  .hero-hint{display:block}
+  .tagline{margin-top:18px} .tbm{height:88px;padding-right:66px} .cutter-svg{width:110px;height:110px}
+  .cards,.s-grid,.foot-grid{grid-template-columns:1fr}
+  .site .lbl{font-size:17px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+
+.p-hero{background:linear-gradient(180deg,#F3F7FD,#fff);padding:56px 0 34px}
+.p-hero .over{font-size:13px;font-weight:800;letter-spacing:.18em;color:var(--orange)}
+.p-hero h1{margin:8px 0 14px;font-size:clamp(30px,4vw,48px);line-height:1.15;color:var(--blue);font-weight:800;max-width:900px}
+.p-hero .lead{font-size:18px;color:#3A4C74;max-width:860px;margin:0 0 24px}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+.badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid #D7E2F1;border-radius:999px;padding:8px 15px;font-weight:600;font-size:14px;color:var(--blue)}
+.badge::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--orange)}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;text-decoration:none;font-weight:700;padding:12px 22px;border-radius:10px;border:2px solid var(--orange);background:var(--orange);color:#fff}
+.btn.ghost{background:transparent;color:var(--blue);border-color:var(--blue)}
+
+.crew{padding:24px 0 10px}
+.sec-h{max-width:1240px;margin:0 auto 14px;padding:0 24px;display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.sec-h h2{margin:0;font-size:30px;color:var(--blue)}
+.sec-h p{margin:4px 0 0;color:var(--muted)}
+.switch{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:14px;color:var(--blue);text-decoration:none;border:1.5px solid var(--blue);border-radius:10px;padding:8px 13px}
+.switch:hover{background:var(--blue);color:#fff}
+.hint{display:inline-flex;align-items:center;gap:10px;background:#FFF2E9;color:#9A4512;font-weight:600;font-size:14px;padding:9px 14px;border-radius:10px}
+.hint i{width:22px;height:22px;border-radius:50%;background:var(--orange);color:#fff;font-style:normal;font-size:12px;font-weight:800;display:grid;place-items:center;animation:bob 1.6s ease-in-out infinite}
+@keyframes bob{50%{transform:scale(1.18)}}
+
+.stage{position:relative;max-width:1480px;margin:0 auto;padding:0 16px;display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:16px;align-items:stretch}
+.scroller{border-radius:16px;overflow:hidden;box-shadow:0 20px 50px -30px rgba(20,47,114,.5);border:1px solid #DCE5F1}
+.tbm-svg{display:block;width:100%;height:auto}
+.tbm-svg .eq{font:600 14px "Be Vietnam Pro",sans-serif;fill:#3A4C74;paint-order:stroke;stroke:rgba(255,255,255,.8);stroke-width:4px}
+.tbm-svg .eq-w{font:700 11px "Be Vietnam Pro",sans-serif;fill:#fff;letter-spacing:.06em}
+.tbm-svg .muck{stroke:#8C7656;stroke-width:5;stroke-dasharray:9 7;animation:belt 1.4s linear infinite}
+@keyframes belt{to{stroke-dashoffset:-32}}
+.tbm-svg .drop{stroke:#8C7656;stroke-width:6;stroke-dasharray:5 5;animation:belt .6s linear infinite}
+.tbm-svg .cutter{stroke:#2B3446;stroke-width:10;stroke-dasharray:7 5;animation:cut .35s linear infinite}
+@keyframes cut{to{stroke-dashoffset:-24}}
+.tbm-svg .train{animation:train 10s ease-in-out infinite}
+@keyframes train{0%,100%{transform:translateX(0)}50%{transform:translateX(-26px)}}
+.tbm-svg .spark{animation:spark .5s steps(2) infinite}
+@keyframes spark{50%{opacity:.15}}
+
+.tbm-svg .wk{cursor:pointer;transition:opacity .25s,filter .25s}
+.tbm-svg .wk .hit{fill:transparent}
+.tbm-svg .wk .wave{display:none}
+.tbm-svg .wk.hov .arms{display:none}
+.tbm-svg .wk.hov .wave{display:inline}
+.tbm-svg .wk .hand{transform-origin:6px -25px;animation:wave .45s ease-in-out infinite alternate}
+@keyframes wave{from{transform:rotate(-22deg)}to{transform:rotate(18deg)}}
+.tbm-svg .wk.hov{filter:brightness(1.12) drop-shadow(0 0 5px #FFD24D)}
+.tbm-svg .wk.hov .halo{opacity:.9;fill:#FFC233}
+.tbm-svg .hot.hov .disc{fill:var(--blue)}
+.tbm-svg.has-sel .wk.hov,.tbm-svg.has-sel .hot.hov{opacity:1}
+.tbm-svg .wk .halo{fill:#FFD24D;opacity:.28;transition:opacity .2s}
+.tbm-svg .wk:hover .halo{opacity:.55}
+.tbm-svg.has-sel .wk:not(.sel){opacity:.45}
+.tbm-svg .wk.sel .halo{opacity:.85;fill:#FFC233}
+.tbm-svg .hot{cursor:pointer;outline:none}
+.tbm-svg .hot .lead{stroke:var(--blue);stroke-width:1.6;stroke-dasharray:3 3}
+.tbm-svg .hot .dot{fill:var(--blue)}
+.tbm-svg .hot .disc{fill:var(--orange);stroke:#fff;stroke-width:3;transition:fill .2s}
+.tbm-svg .hot .num{font:800 15px "Be Vietnam Pro",sans-serif;fill:#fff;pointer-events:none}
+.tbm-svg .hot .pulse{fill:var(--orange);transform-box:fill-box;transform-origin:center;animation:pulse 2s ease-out infinite}
+@keyframes pulse{from{transform:scale(1);opacity:.55}to{transform:scale(2);opacity:0}}
+.tbm-svg .hot:hover .disc,.tbm-svg .hot:focus-visible .disc{fill:var(--blue)}
+.tbm-svg .hot.sel .disc{fill:var(--blue)}
+.tbm-svg .hot.sel .pulse{fill:var(--blue)}
+.tbm-svg.has-sel .hot:not(.sel){opacity:.55}
+
+.panel{position:relative;overflow:auto;background:#fff;
+  border-radius:14px;box-shadow:0 18px 40px -16px rgba(20,47,114,.45);border:1px solid #DCE5F1;padding:20px 22px 18px}
+.panel .p-top{display:flex;align-items:center;gap:12px}
+.panel .p-num{flex:0 0 42px;height:42px;border-radius:50%;background:var(--orange);color:#fff;display:grid;place-items:center;font-weight:800;font-size:18px}
+.panel h3{margin:0;padding-right:18px;font-size:20px;line-height:1.25;color:var(--blue)}
+.panel .en{margin:2px 0 0;font-size:13.5px;color:var(--muted);font-style:italic}
+.panel h4{margin:14px 0 6px;font-size:13px;letter-spacing:.12em;color:var(--orange)}
+.panel ul{margin:0;padding-left:18px;color:#2A3A5E;font-size:14.5px}
+.panel li{margin-bottom:5px}
+.panel .exp{margin-top:12px;display:flex;gap:8px;align-items:flex-start;background:#EEF4FC;border-radius:10px;padding:9px 11px;font-size:13.5px;color:var(--blue);font-weight:600}
+.panel .nav2{display:flex;justify-content:space-between;margin-top:14px;gap:8px}
+.panel button{font:inherit;cursor:pointer}
+.panel .pn{border:1px solid #D5DFEC;background:#fff;border-radius:8px;padding:7px 12px;font-weight:600;color:var(--blue);font-size:13.5px}
+.panel .pn:hover{border-color:var(--blue)}
+.panel .x{position:absolute;right:10px;top:8px;border:0;background:none;font-size:22px;color:var(--muted);line-height:1}
+.panel .intro p{margin:6px 0 0;color:#3A4C74;font-size:14.5px}
+
+.legend{max-width:1240px;margin:22px auto 0;padding:0 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.legend button{font:inherit;text-align:left;cursor:pointer;display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid #DCE5F1;border-radius:10px;padding:10px 12px;transition:border-color .2s,box-shadow .2s}
+.legend button:hover,.legend button[aria-pressed="true"]{border-color:var(--orange);box-shadow:0 0 0 2px rgba(232,112,47,.25)}
+.legend b{flex:0 0 26px;height:26px;border-radius:50%;background:var(--orange);color:#fff;display:grid;place-items:center;font-size:13px}
+.legend span{font-weight:700;color:var(--blue);font-size:14px;line-height:1.3}
+.legend small{display:block;font-weight:500;color:var(--muted);font-size:12.5px}
+
+.why{padding:64px 0 20px}
+.why h2,.models h2{text-align:center;color:var(--blue);font-size:30px;margin:0 0 8px}
+.why .sub,.models .sub{text-align:center;color:var(--muted);max-width:760px;margin:0 auto 30px}
+.w-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.w-item{background:#fff;border:1px solid #DCE5F1;border-top:4px solid var(--orange);border-radius:12px;padding:20px}
+.w-item h3{margin:0 0 8px;font-size:17.5px;color:var(--blue)}
+.w-item p{margin:0;color:var(--muted);font-size:14.5px}
+.models{padding:44px 0 60px}
+.m-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.m-item{background:var(--bg);border-radius:12px;padding:22px}
+.m-item .n{font-weight:800;color:var(--orange);font-size:13px;letter-spacing:.12em}
+.m-item h3{margin:6px 0 6px;color:var(--blue);font-size:18px}
+.m-item p{margin:0;color:var(--muted);font-size:14.5px}
+.cta{background:linear-gradient(110deg,var(--blue) 0%,#2853B8 100%);color:#fff;padding:44px 0}
+.cta .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.cta h2{margin:0 0 6px;font-size:26px}
+.cta p{margin:0;opacity:.9}
+.cta .btn.ghost{color:#fff;border-color:#fff}
+
+@media (max-width:1100px){.stage{grid-template-columns:1fr}.legend{grid-template-columns:repeat(3,1fr)}.w-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:900px){
+  .scroller{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .tbm-svg{width:1250px;max-width:none}
+  .legend{grid-template-columns:1fr 1fr}
+  .m-grid,.w-grid{grid-template-columns:1fr}
+}
+@media (max-width:560px){.legend{grid-template-columns:1fr}}
+
+.mt{padding:10px 0 60px}
+.mt-grid{display:grid;grid-template-columns:1fr 1.3fr 1fr;grid-template-rows:auto auto;gap:22px;align-items:stretch}
+.mt-photo{margin:0;grid-column:2;grid-row:1/3;position:relative;border-radius:18px;overflow:hidden;min-height:560px;box-shadow:0 24px 50px -28px rgba(20,47,114,.55)}
+.mt-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:58% 50%}
+.mt-photo figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 20px 16px;color:#fff;font-size:14px;font-weight:600;
+  background:linear-gradient(180deg,transparent,rgba(16,32,74,.85))}
+.c1{grid-column:1;grid-row:1}.c2{grid-column:3;grid-row:1}.c3{grid-column:1;grid-row:2}.c4{grid-column:3;grid-row:2}
+.mt-card{position:relative;background:#fff;border:1px solid #DCE5F1;border-radius:16px;padding:24px 24px 22px;transition:transform .25s,box-shadow .25s}
+.mt-card:hover{transform:translateY(-3px);box-shadow:0 18px 36px -22px rgba(20,47,114,.45)}
+.mt-card::before{content:"";position:absolute;left:24px;right:24px;top:0;height:4px;border-radius:0 0 4px 4px;background:var(--orange)}
+.mt-card .hd{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.mt-card .hd svg{flex:0 0 44px;height:44px}
+.mt-card .n{display:block;font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--orange)}
+.mt-card h2{margin:0;font-size:19px;line-height:1.3;color:var(--blue)}
+.mt-card p{margin:0 0 10px;color:#3A4C74;font-size:14.8px}
+.mt-card ul{margin:0;padding-left:18px;color:#3A4C74;font-size:14.8px}
+.mt-card li{margin-bottom:6px}
+.mt-card li b{color:var(--blue)}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:4px}
+.tags span{background:#EEF4FC;color:var(--blue);font-weight:600;font-size:13px;padding:5px 10px;border-radius:999px}
+.tags span.main{background:var(--orange);color:#fff}
+
+.steps{padding:56px 0 64px;background:var(--bg)}
+.steps h2{text-align:center;color:var(--blue);font-size:30px;margin:0 0 40px}
+.s-row{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative}
+.track{position:absolute;height:3px;background:repeating-linear-gradient(90deg,var(--orange) 0 10px,transparent 10px 18px);z-index:0}
+.pipe{position:absolute;left:0;top:-5px;height:13px;width:0;border-radius:3px;
+  background:repeating-linear-gradient(90deg,#A9B3BE 0 30px,#7E8A97 30px 33px);box-shadow:inset 0 2px 0 rgba(255,255,255,.45)}
+.mtbm{position:absolute;left:0;top:0;width:74px;height:30px;margin:-15px 0 0 -37px;z-index:1;pointer-events:none;transition:opacity .5s}
+.mtbm .cut{stroke:#2B3446;stroke-width:6;stroke-dasharray:4 3;animation:mcut .3s linear infinite}
+@keyframes mcut{to{stroke-dashoffset:-14}}
+.mtbm.idle .cut{animation:none}
+.st{position:relative;text-align:center;padding:0 6px;z-index:2}
+.st b{position:relative;display:grid;place-items:center;width:56px;height:56px;margin:0 auto 14px;border-radius:50%;background:#9FB0CF;color:#fff;font-size:20px;
+  box-shadow:0 0 0 6px var(--bg);transition:background .4s,box-shadow .4s,transform .4s}
+.st.on b{background:var(--orange);transform:scale(1.08);box-shadow:0 0 0 6px var(--bg),0 0 0 12px rgba(232,112,47,.25),0 0 28px 8px rgba(232,112,47,.45)}
+.st h3{margin:0 0 6px;font-size:17px;color:#7C8BA8;transition:color .4s}
+.st.on h3{color:var(--blue)}
+.st p{margin:0;font-size:14.5px;color:var(--muted);opacity:0;transform:translateY(-6px);transition:opacity .6s,transform .6s}
+.st.on p{opacity:1;transform:none}
+.s-scroll{position:relative}
+.adv{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:36px}
+.adv span{background:#fff;border:1px solid #D7E2F1;border-radius:10px;padding:9px 14px;font-weight:600;color:var(--blue);font-size:14px}
+.adv span::before{content:"✓ ";color:var(--orange);font-weight:800}
+
+@media (max-width:1000px){
+  .mt-grid{grid-template-columns:1fr 1fr}.c1,.c2,.c3,.c4{grid-column:auto;grid-row:auto}
+  .mt-photo{grid-column:1/3;grid-row:auto;min-height:380px;order:-1}
+  .s-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin:0 -24px;padding:0 24px}
+  .s-scroll::-webkit-scrollbar{display:none}
+  .s-row{min-width:860px}
+}
+@media (max-width:640px){.mt-grid{grid-template-columns:1fr}.mt-photo{grid-column:auto;min-height:300px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="index.html" aria-label="Vitunnel – home">
+      <svg width="46" height="46" viewBox="0 0 100 100" aria-hidden="true">
+  <circle cx="50" cy="50" r="47" fill="#fff"/>
+  <circle cx="50" cy="50" r="40" fill="none" stroke="#1C3F94" stroke-width="9"/>
+  <circle cx="50" cy="50" r="28" fill="none" stroke="#3F86DB" stroke-width="9"/>
+  <circle cx="50" cy="50" r="18" fill="#5DB6EE"/>
+  <g stroke="#fff" stroke-width="5" stroke-linecap="butt">
+    <line x1="2" y1="50" x2="98" y2="50"/>
+    <line x1="50" y1="54" x2="24" y2="94"/><line x1="50" y1="54" x2="76" y2="94"/>
+  </g>
+  <path d="M20,9 L50,56 L80,9" fill="none" stroke="#fff" stroke-width="15" stroke-linejoin="miter"/>
+  <path d="M20,9 L50,56 L80,9" fill="none" stroke="#E8702F" stroke-width="9" stroke-linejoin="miter"/>
+</svg>
+      <span class="brand-txt"><b>VITUNNEL</b><small>BUILDING UNDERGROUND INFRASTRUCTURE</small></span>
+    </a>
+    <nav class="nav">
+      <a href="tbm.html">TBM Support</a>
+      <a href="mtbm.html" class="on">mTBM</a>
+    </nav>
+    <div class="contact">
+      <a href="mailto:contact@vitunnel.com" class="c-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3z M3 6l9 7 9-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>contact@vitunnel.com</span></a>
+      <a href="tel:+84968988497" class="c-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z" fill="currentColor"/></svg><span>+84 968 988 497</span></a>
+      <div class="lang" aria-label="Language"><a href="../mtbm.html" hreflang="vi" lang="vi" title="Tiếng Việt">VI</a><a class="on" href="mtbm.html" hreflang="en" lang="en" title="English">EN</a><a href="../fr/mtbm.html" hreflang="fr" lang="fr" title="Français">FR</a></div>
+    </div>
+  </div>
+</header>
+<main>
+  <section class="p-hero">
+    <div class="wrap">
+      <span class="over">SERVICE 02 · mTBM</span>
+      <h1>mTBM microtunnelling</h1>
+      <p class="lead">Design and construction of underground pipelines by microtunnelling: no open trench, no traffic disruption, and high accuracy in dense urban ground full of existing utilities.</p>
+      <div class="btns"><a class="btn" href="mailto:contact@vitunnel.com?subject=Microtunnelling enquiry">Discuss your project</a><a class="btn ghost" href="#quy-trinh">Construction process ↓</a></div>
+    </div>
+  </section>
+
+  <section class="mt wrap" aria-label="mTBM capabilities">
+    <div class="mt-grid">
+      <article class="mt-card c1">
+        <div class="hd"><svg viewBox="0 0 40 40"><rect x="3" y="15" width="24" height="10" rx="2" fill="#A9B3BE"/><line x1="11" y1="15" x2="11" y2="25" stroke="#7E8A97" stroke-width="2"/><line x1="19" y1="15" x2="19" y2="25" stroke="#7E8A97" stroke-width="2"/><rect x="27" y="13" width="8" height="14" rx="2.5" fill="#E8702F"/><line x1="37" y1="12" x2="37" y2="28" stroke="#1C3F94" stroke-width="2.5" stroke-dasharray="2.5 2"/></svg><div><span class="n">01</span><h2>Technique &amp; applications</h2></div></div>
+        <p>A remote-controlled boring machine excavates at the front while hydraulic jacks in the launch shaft push the pipes, one after another, through the ground to the reception shaft. Spoil is carried to the surface by a closed slurry circuit and the alignment is guided by laser.</p>
+        <div class="tags"><span class="main">Water &amp; sewerage</span><span>Storm &amp; wastewater sewers</span><span>Water mains</span><span>Power &amp; telecom ducts</span><span>Road, rail &amp; river crossings</span></div>
+      </article>
+
+      <figure class="mt-photo">
+        <img src="../images/mtbm-shaft.jpg" alt="Microtunnelling machine and jacking frame in the launch shaft" loading="lazy">
+        <figcaption>Microtunnelling machine and hydraulic jacking frame in the launch shaft</figcaption>
+      </figure>
+
+      <article class="mt-card c2">
+        <div class="hd"><svg viewBox="0 0 40 40"><rect x="7" y="4" width="26" height="32" rx="4" fill="#1C3F94"/><rect x="11" y="8" width="18" height="8" rx="1.5" fill="#BFE3F7"/><g fill="#fff"><rect x="11.0" y="20" width="4.5" height="4" rx="1"/><rect x="17.5" y="20" width="4.5" height="4" rx="1"/><rect x="24.0" y="20" width="4.5" height="4" rx="1"/><rect x="11.0" y="26" width="4.5" height="4" rx="1"/><rect x="17.5" y="26" width="4.5" height="4" rx="1"/><rect x="24.0" y="26" width="4.5" height="4" rx="1"/></g><rect x="24" y="26" width="5" height="4" rx="1" fill="#E8702F"/></svg><div><span class="n">02</span><h2>European-standard design calculations</h2></div></div>
+        <p>In-house calculation tools based on the <b>Eurocodes</b>, developed and validated by VITUNNEL engineers:</p>
+        <ul><li>Required jacking force and intermediate jacking stations</li><li>Face pressure and ground stability</li><li>Pipe structural capacity checks</li><li>Settlement prediction and impact on adjacent structures</li></ul>
+      </article>
+
+      <article class="mt-card c3">
+        <div class="hd"><svg viewBox="0 0 40 40"><circle cx="14" cy="13" r="5" fill="#1C3F94"/><circle cx="27" cy="13" r="5" fill="#2F6FD0"/><path d="M5 32c0-6 4-10 9-10s9 4 9 10z" fill="#1C3F94"/><path d="M18 32c0-6 4-10 9-10s9 4 9 10z" fill="#2F6FD0"/><path d="M8 11a6 6 0 0 1 12 0z" fill="#E8702F"/><path d="M21 11a6 6 0 0 1 12 0z" fill="#E8702F"/></svg><div><span class="n">03</span><h2>Construction</h2></div></div>
+        <p>Vietnamese engineers trained at the <b>Hanoi University of Civil Engineering</b> and <b>École des Ponts ParisTech</b> (France), one of Europe’s leading civil engineering schools.</p>
+        <p>We run in-house training programmes so that every engineer works to international construction standards.</p>
+      </article>
+
+      <article class="mt-card c4">
+        <div class="hd"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="15" fill="none" stroke="#1C3F94" stroke-width="3"/><ellipse cx="20" cy="20" rx="6.5" ry="15" fill="none" stroke="#1C3F94" stroke-width="2"/><line x1="5" y1="20" x2="35" y2="20" stroke="#1C3F94" stroke-width="2"/><circle cx="31" cy="9" r="5" fill="#E8702F"/></svg><div><span class="n">04</span><h2>International partners</h2></div></div>
+        <ul>
+          <li><b>Polish technicians</b> experienced in operating tunnelling machines</li>
+          <li><b>Machinery and equipment</b> imported from Europe</li>
+          <li><b>French supplier</b>: GRP (glass-fibre reinforced polymer) jacking pipes – light, durable and corrosion-resistant</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="steps" id="quy-trinh">
+    <div class="wrap">
+      <h2>Microtunnelling construction process</h2>
+      <div class="s-scroll" id="sscroll"><div class="s-row" id="srow">
+        <div class="track" id="track"><div class="pipe" id="pipe"></div></div>
+        <svg class="mtbm idle" id="mtbm" viewBox="0 0 74 30" aria-hidden="true">
+          <rect x="2" y="7" width="40" height="16" rx="3" fill="#2F6FD0"/>
+          <rect x="40" y="4" width="26" height="22" rx="4" fill="#E8702F"/>
+          <rect x="44" y="4" width="3" height="22" fill="#B9531C"/>
+          <circle cx="56" cy="15" r="3" fill="#fff" opacity=".8"/>
+          <line class="cut" x1="69" y1="3" x2="69" y2="27"/>
+        </svg>
+        <div class="st"><b>1</b><h3>Launch &amp; reception shafts</h3><p>Two shafts are built at either end of the drive; the jacking frame and reaction wall are installed.</p></div>
+        <div class="st"><b>2</b><h3>Launch</h3><p>The machine is lowered into the launch shaft and enters the ground through a sealed tunnel eye.</p></div>
+        <div class="st"><b>3</b><h3>Pipe jacking</h3><p>Each pipe is lowered, connected behind the machine and jacked forward, with laser guidance.</p></div>
+        <div class="st"><b>4</b><h3>Recovery</h3><p>The machine reaches the reception shaft and is lifted out; the pipeline is complete and ready to connect.</p></div>
+      </div></div>
+      <div class="adv"><span>No open trench</span><span>No traffic disruption</span><span>Works below the water table</span><span>High accuracy</span><span>Minimal surface settlement</span><span>Safe for adjacent structures</span></div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <div><h2>Have a pipeline to install without trenching?</h2><p>Send us your alignment details and we will propose a suitable microtunnelling solution.</p></div>
+      <div class="btns"><a class="btn" href="mailto:contact@vitunnel.com?subject=Microtunnelling enquiry">contact@vitunnel.com</a><a class="btn ghost" href="tel:+84968988497">+84 968 988 497</a></div>
+    </div>
+  </section>
+</main>
+<footer class="foot" id="lien-he">
+  <div class="wrap foot-grid">
+    <div>
+      <p class="f-name">VIETNAM TUNNEL ENGINEERING SOLUTIONS JOINT STOCK COMPANY</p>
+      <p class="f-en">CÔNG TY CỔ PHẦN GIẢI PHÁP HẦM VIỆT NAM</p>
+    </div>
+    <div class="f-info">
+      <p><b>Head office:</b> 4th floor, MHD Trung Văn Office Building, 29 Tố Hữu Street, Đại Mỗ Ward, Hanoi, Vietnam</p>
+      <p><b>Email:</b> <a href="mailto:contact@vitunnel.com">contact@vitunnel.com</a> &nbsp;·&nbsp; <b>Phone:</b> <a href="tel:+84968988497">0968 988 497</a></p>
+      <p><b>Website:</b> vitunnel.com</p>
+    </div>
+  </div>
+  <div class="wrap f-copy">© 2026 VITUNNEL. All rights reserved.</div>
+</footer>
+<script>
+(function(){
+  var row=document.getElementById('srow'), sc=document.getElementById('sscroll'), track=document.getElementById('track'),
+      pipe=document.getElementById('pipe'), m=document.getElementById('mtbm'), steps=[].slice.call(row.querySelectorAll('.st'));
+  var C=[], SPEED=95, HOLD=2600, raf=0, t0=0, phase='run', running=false;
+  function measure(){
+    var r=row.getBoundingClientRect();
+    C=steps.map(function(st){var b=st.querySelector('b').getBoundingClientRect();return {x:b.left-r.left+b.width/2,y:b.top-r.top+b.height/2,r:b.width/2};});
+    track.style.left=C[0].x+'px'; track.style.top=(C[0].y-1)+'px'; track.style.width=(C[C.length-1].x-C[0].x)+'px';
+  }
+  function light(k){ steps.forEach(function(st,i){ st.classList.toggle('on', i<=k); }); }
+  function place(front){
+    var cx=front-32, y=C[0].y;
+    m.style.transform='translate('+cx+'px,'+y+'px)';
+    pipe.style.width=Math.max(0,front-69-C[0].x)+'px';
+    var k=-1; C.forEach(function(c,i){ if(front>=c.x-c.r) k=i; }); light(k);
+    if(sc.scrollWidth>sc.clientWidth+4) sc.scrollLeft=cx-sc.clientWidth/2;
+  }
+  function frame(now){
+    raf=requestAnimationFrame(frame);
+    var start=C[0].x+10, end=C[C.length-1].x, dur=(end-start)/SPEED*1000;
+    if(phase==='run'){
+      var t=Math.min((now-t0)/dur,1); place(start+(end-start)*t);
+      if(t>=1){ phase='hold'; t0=now; m.classList.add('idle'); }
+    } else if(phase==='hold'){
+      if(now-t0>HOLD){ phase='fade'; t0=now; m.style.opacity=0; }
+    } else if(now-t0>600){
+      light(-1); pipe.style.width='0px'; place(start); m.style.opacity=1; m.classList.remove('idle'); phase='run'; t0=now;
+    }
+  }
+  measure(); window.addEventListener('resize', measure);
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){ light(3); m.style.display='none'; return; }
+  light(-1); place(C[0].x+10);
+  new IntersectionObserver(function(es){
+    if(es[0].isIntersecting && !running){ running=true; phase='run'; t0=performance.now(); raf=requestAnimationFrame(frame); }
+    else if(!es[0].isIntersecting && running){ running=false; cancelAnimationFrame(raf); }
+  },{threshold:.3}).observe(row);
+})();
+</script>
+</body>
+</html>
